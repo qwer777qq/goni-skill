@@ -19,3 +19,7 @@ python -X utf8 scripts/goni.py --project "C:/path/to/project" resume
 ```
 
 `checkpoint`는 프로젝트의 `memory/workflow-state.json`과 `memory/workflow-log.jsonl`에 검증한 결과를 기록합니다. `graph`는 선택한 코드 범위만 로컬에서 분석합니다.
+
+## AlphaCut 조사 스킬
+
+`skills/goni-alphacut/`에는 템플릿·자막·편집 기능을 화면 증거로 조사하는 고니 스킬이 있습니다. 저장소를 받은 뒤 해당 폴더를 `$HOME/.codex/skills/goni-alphacut`에 복사하면 새 Codex 채팅에서 `$goni-alphacut`을 사용할 수 있습니다. 로그인 화면 HTML과 테스트 미디어는 이 공개 저장소에 포함하지 않습니다.
