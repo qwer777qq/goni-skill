@@ -1,0 +1,4 @@
+interface:
+  display_name: "고니"
+  short_description: "고니 GitHub와 SCV·Graphify 개발 작업을 이어가기"
+  default_prompt: "$goni로 현재 프로젝트의 GitHub 위치와 작업 상태를 확인하고 이어서 진행해 줘."
