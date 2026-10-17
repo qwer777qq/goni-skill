@@ -18,7 +18,7 @@ AlphaCut의 실제 UI를 먼저 확인하고, 관찰한 기능과 공개 정적 
 
 ## 재사용할 조사 도구
 
-작업 폴더에 이전 `research/alphacut/`가 있으면 그 안의 `capture_public.py`, `capture_static.py`, `extract_all_presets.py`, `build_template_index.py`를 사용한다. 앞의 두 스크립트는 공개 자산 수집용이고, 뒤의 두 스크립트는 해당 빌드의 정적 코드와 브라우저에서 저장한 카드 DOM이 있어야 실행된다. 새 빌드에서는 추출 코드의 모듈 번호·태그 목록·카드 구조를 재검증한다.
+작업 폴더에 이전 `research/alphacut/`가 있으면 그 안의 `capture_public.py`, `capture_static.py`, `extract_all_presets.py`, `build_template_index.py`, `capture_template_assets.py`를 사용한다. 앞의 두 스크립트는 공개 HTML/JS/CSS 수집용이고, `capture_template_assets.py`는 템플릿 미리보기의 공개 이미지·폰트 수집용이다. 추출과 갤러리 생성에는 해당 빌드의 정적 코드와 브라우저에서 저장한 카드 DOM이 있어야 한다. 자산 수집 후 갤러리 생성 스크립트를 다시 실행하면 로컬 파일 링크가 반영된다. 새 빌드에서는 추출 코드의 모듈 번호·태그 목록·카드 구조를 재검증한다.
 
 자막은 UI의 TXT/SRT 내보내기를 우선한다. HTML/CSS를 다시 수집할 때는 해시와 원본 URL을 남겨 이후 빌드 변경을 비교한다. 결과 보고에는 템플릿 수, 각 기능을 시험한 범위, 산출물 경로, 미확인 범위를 명시한다.
 
