@@ -1,0 +1,5210 @@
+{
+  "title": "고니 이웃부스터 정적 기술 색인",
+  "date": "2026-10-20",
+  "input_sha256": "8dd0b162805d2ad7f3b5264f08afd6d62ffc38f1ee0d0c2e8539c25d80a0a202",
+  "scope": "src.* 80 modules and app launcher; symbols are not original source",
+  "modules": [
+    {
+      "module": "app",
+      "code_objects": 4,
+      "imports": [
+        "PySide6.QtGui",
+        "PySide6.QtWidgets",
+        "__future__",
+        "ctypes",
+        "pathlib",
+        "src",
+        "src.app_context",
+        "src.ui.account_dialog",
+        "src.ui.main_window",
+        "src.ui.notice",
+        "src.ui.setup_wizard",
+        "src.ui.styles",
+        "src.ui.widgets",
+        "src.utils.logging_setup",
+        "sys",
+        "traceback"
+      ],
+      "string_constants": 54,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_show_fatal_error",
+        "main",
+        "main.<locals>.handle_exception"
+      ]
+    },
+    {
+      "module": "src",
+      "code_objects": 1,
+      "imports": [],
+      "string_constants": 0,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": []
+    },
+    {
+      "module": "src.app_context",
+      "code_objects": 29,
+      "imports": [
+        "__future__",
+        "pathlib",
+        "src",
+        "src.database.db",
+        "src.services",
+        "src.services.account_service",
+        "src.services.action_log_service",
+        "src.services.admin_service",
+        "src.services.ai_quota_service",
+        "src.services.ai_text_service",
+        "src.services.auth_service",
+        "src.services.backup_service",
+        "src.services.bridge_controller",
+        "src.services.device_service",
+        "src.services.excel_service",
+        "src.services.interaction_service",
+        "src.services.license_service",
+        "src.services.naver_api_service",
+        "src.services.neighbor_request_service",
+        "src.services.neighbor_service",
+        "src.services.phrase_source",
+        "src.services.responder_service",
+        "src.services.supabase_client",
+        "src.services.target_filter_service",
+        "src.services.target_service",
+        "src.services.template_service",
+        "src.utils",
+        "src.utils.datetime_utils",
+        "src.utils.errors",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 241,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "AppContext",
+        "AppContext.__init__",
+        "AppContext.configure_license_backend",
+        "AppContext.license_configured",
+        "AppContext.apply_license_backend",
+        "AppContext.clear_license_backend",
+        "AppContext.license_status",
+        "AppContext.feature_allowed",
+        "AppContext.feature_lock_reason",
+        "AppContext.sign_in",
+        "AppContext.sign_up",
+        "AppContext.recover_password",
+        "AppContext.reset_password",
+        "AppContext.sign_out",
+        "AppContext.restore_session",
+        "AppContext._after_sign_in",
+        "AppContext.profile",
+        "AppContext.needs_setup",
+        "AppContext.complete_setup",
+        "AppContext.add_profile",
+        "AppContext.change_profile_preset",
+        "AppContext.switch_profile",
+        "AppContext.startup",
+        "AppContext.shutdown",
+        "AppContext.reset_all_data",
+        "AppContext._check_clean_exit",
+        "AppContext._write_lock",
+        "AppContext._remove_lock"
+      ]
+    },
+    {
+      "module": "src.config",
+      "code_objects": 6,
+      "imports": [
+        "__future__",
+        "os",
+        "pathlib",
+        "sys"
+      ],
+      "string_constants": 40,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_detect_base_dir",
+        "user_state_dir",
+        "ensure_directories",
+        "db_path",
+        "lock_path"
+      ]
+    },
+    {
+      "module": "src.database",
+      "code_objects": 1,
+      "imports": [],
+      "string_constants": 0,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": []
+    },
+    {
+      "module": "src.database.db",
+      "code_objects": 121,
+      "imports": [
+        "__future__",
+        "collections.abc",
+        "datetime",
+        "hashlib",
+        "pathlib",
+        "shutil",
+        "sqlite3",
+        "src",
+        "src.database.schema",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.utils.datetime_utils",
+        "src.utils.errors",
+        "src.utils.logging_setup",
+        "threading",
+        "typing"
+      ],
+      "string_constants": 1241,
+      "sql_constants": 63,
+      "tables": [],
+      "symbols": [
+        "_hash_text",
+        "Database",
+        "Database.__init__",
+        "Database._configure",
+        "Database.create_tables",
+        "Database._create_indexes",
+        "Database._column_names",
+        "Database.migrate",
+        "Database._profile_row_to_obj",
+        "Database.list_profiles",
+        "Database.reload_profiles",
+        "Database.add_profile",
+        "Database.update_profile",
+        "Database.rename_profile",
+        "Database.rename_profile.<locals>.<genexpr>",
+        "Database.delete_profile",
+        "Database.delete_profile.<locals>.<genexpr>",
+        "Database._ensure_profiles",
+        "Database.execute",
+        "Database.query",
+        "Database.query_one",
+        "Database.close",
+        "Database.active_profile",
+        "Database.set_active_profile",
+        "Database.load_active_profile",
+        "Database._scoped",
+        "Database._setting_key",
+        "Database.get_setting",
+        "Database.setting_default",
+        "Database._setting_default",
+        "Database.get_bool_setting",
+        "Database.get_int_setting",
+        "Database.set_setting",
+        "Database.all_settings",
+        "Database.add_target",
+        "Database.add_target.<locals>.<genexpr>",
+        "Database.update_target",
+        "Database.update_target.<locals>.<genexpr>",
+        "Database.get_target",
+        "Database.list_targets",
+        "Database.soft_delete_targets",
+        "Database.soft_delete_targets.<locals>.<genexpr>",
+        "Database.restore_targets",
+        "Database.restore_targets.<locals>.<genexpr>",
+        "Database.purge_targets",
+        "Database.purge_targets.<locals>.<genexpr>",
+        "Database.bulk_update_status",
+        "Database.bulk_update_status.<locals>.<genexpr>",
+        "Database.set_target_status",
+        "Database.count_targets",
+        "Database.find_by_blog_id",
+        "Database.find_by_post_url",
+        "Database.find_by_post_no",
+        "Database.has_neighbor_request",
+        "Database.has_comment",
+        "Database.add_history",
+        "Database.update_history_result",
+        "Database.last_action_row",
+        "Database.last_action_row.<locals>.<genexpr>",
+        "Database.get_account",
+        "Database.save_account",
+        "Database.delete_account",
+        "Database.upsert_neighbor",
+        "Database.upsert_neighbor.<locals>.keep",
+        "Database.get_neighbor",
+        "Database.list_neighbors",
+        "Database.count_neighbors",
+        "Database.neighbors_needing_activity_check",
+        "Database.comment_events",
+        "Database.mark_comment_reply",
+        "Database.update_responder_activity",
+        "Database.upsert_responder",
+        "Database.upsert_responder.<locals>.keep",
+        "Database.get_responder",
+        "Database.list_responders",
+        "Database.count_responders",
+        "Database.set_responder_reply",
+        "Database.delete_responders",
+        "Database.add_reaction_event",
+        "Database.count_reaction_events",
+        "Database.delete_neighbors",
+        "Database.delete_neighbor_ids",
+        "Database.delete_neighbor_ids.<locals>.<genexpr>",
+        "Database.set_neighbors_excluded",
+        "Database.set_neighbors_excluded.<locals>.<genexpr>",
+        "Database.my_post_counts",
+        "Database.upsert_my_post",
+        "Database.list_history",
+        "Database.delete_history",
+        "Database.delete_history.<locals>.<genexpr>",
+        "Database.count_today_actions",
+        "Database.add_template",
+        "Database.update_template",
+        "Database.clear_stale_generated_text",
+        "Database.clear_stale_generated_text.<locals>.<genexpr>",
+        "Database.preserve_edited_builtins",
+        "Database.delete_template",
+        "Database.get_template",
+        "Database.list_templates",
+        "Database.increment_template_use",
+        "Database.count_templates",
+        "Database.delete_builtin_templates",
+        "Database.add_fragment",
+        "Database.update_fragment",
+        "Database.delete_fragment",
+        "Database.list_fragments",
+        "Database.count_fragments",
+        "Database.delete_builtin_fragments",
+        "Database.record_phrase",
+        "Database.is_recent_phrase",
+        "Database.is_recent_phrase.<locals>.<genexpr>",
+        "Database.recent_phrases",
+        "Database.clear_phrase_log",
+        "Database.dashboard_stats",
+        "Database.dashboard_stats.<locals>.count",
+        "Database.dashboard_stats.<locals>.<genexpr>",
+        "Database.today_action_stats",
+        "Database.backup_to",
+        "Database.vacuum",
+        "Database.purge_old_trash"
+      ]
+    },
+    {
+      "module": "src.database.schema",
+      "code_objects": 2,
+      "imports": [
+        "__future__"
+      ],
+      "string_constants": 148,
+      "sql_constants": 39,
+      "tables": [
+        "account",
+        "fragments",
+        "history",
+        "meta",
+        "my_posts",
+        "neighbors",
+        "phrase_log",
+        "profiles",
+        "reaction_events",
+        "responders",
+        "settings",
+        "targets",
+        "templates"
+      ],
+      "symbols": [
+        "scoped_key"
+      ]
+    },
+    {
+      "module": "src.models",
+      "code_objects": 1,
+      "imports": [],
+      "string_constants": 0,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": []
+    },
+    {
+      "module": "src.models.entities",
+      "code_objects": 37,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "datetime",
+        "src.models.enums",
+        "typing"
+      ],
+      "string_constants": 273,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "Target",
+        "Target.to_dict",
+        "Target.from_row",
+        "Target.display_name",
+        "Target.best_url",
+        "Target.generated_text_for",
+        "Target.set_generated_text_for",
+        "HistoryEntry",
+        "HistoryEntry.to_dict",
+        "HistoryEntry.from_row",
+        "PhraseTemplate",
+        "PhraseTemplate.to_dict",
+        "PhraseTemplate.from_row",
+        "Neighbor",
+        "Neighbor.to_dict",
+        "Neighbor.from_row",
+        "Neighbor.display_name",
+        "Neighbor.relation_label",
+        "Neighbor.activity_label",
+        "Neighbor.best_url",
+        "Neighbor.days_since_post",
+        "Neighbor.days_since_request",
+        "Neighbor.is_dormant",
+        "Neighbor.state_label",
+        "_days_since",
+        "Responder",
+        "Responder.to_dict",
+        "Responder.from_row",
+        "Responder.display_name",
+        "Responder.reaction_label",
+        "Responder.reply_label",
+        "Responder.best_url",
+        "Responder.can_reply",
+        "Responder.days_since_reaction",
+        "DuplicateInfo",
+        "DuplicateInfo.summary"
+      ]
+    },
+    {
+      "module": "src.models.enums",
+      "code_objects": 66,
+      "imports": [
+        "__future__",
+        "enum"
+      ],
+      "string_constants": 445,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "WorkType",
+        "WorkType.values",
+        "WorkType.from_value",
+        "WorkStatus",
+        "WorkStatus.values",
+        "WorkStatus.from_value",
+        "Category",
+        "Category.values",
+        "Tone",
+        "Tone.values",
+        "TemplateKind",
+        "TemplateKind.values",
+        "BrowserStatus",
+        "BrowserStatus.values",
+        "TaskOutcome",
+        "TaskOutcome.values",
+        "LoginState",
+        "LoginState.values",
+        "LoginState.from_value",
+        "LoginState.label",
+        "ActionType",
+        "ActionType.values",
+        "ActionType.from_value",
+        "ActionType.label",
+        "ActionSource",
+        "ActionSource.values",
+        "ActionSource.label",
+        "ActionStatus",
+        "ActionStatus.values",
+        "ActionStatus.label",
+        "NeighborRelation",
+        "NeighborRelation.values",
+        "NeighborRelation.from_value",
+        "NeighborRelation.label",
+        "relation_from_text",
+        "ActivityStatus",
+        "ActivityStatus.values",
+        "ActivityStatus.from_value",
+        "ActivityStatus.label",
+        "CollectionStatus",
+        "CollectionStatus.values",
+        "CollectionStatus.label",
+        "ReactionType",
+        "ReactionType.values",
+        "ReactionType.from_value",
+        "ReactionType.label",
+        "ReactionType.merged_with",
+        "InteractionMode",
+        "InteractionMode.values",
+        "InteractionMode.from_value",
+        "InteractionMode.from_label",
+        "InteractionMode.label",
+        "InteractionMode.does_like",
+        "InteractionMode.does_comment",
+        "ReplyStatus",
+        "ReplyStatus.values",
+        "ReplyStatus.from_value",
+        "ReplyStatus.label",
+        "SupportState",
+        "SupportState.from_value",
+        "SupportState.label",
+        "InteractionOutcome",
+        "InteractionOutcome.values",
+        "InteractionOutcome.from_value",
+        "InteractionOutcome.label"
+      ]
+    },
+    {
+      "module": "src.services",
+      "code_objects": 1,
+      "imports": [],
+      "string_constants": 0,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": []
+    },
+    {
+      "module": "src.services.account_service",
+      "code_objects": 25,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "datetime",
+        "src.models.enums",
+        "src.utils.datetime_utils",
+        "src.utils.logging_setup",
+        "threading",
+        "typing"
+      ],
+      "string_constants": 160,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "AccountInfo",
+        "AccountInfo.account_id",
+        "AccountInfo.is_logged_in",
+        "AccountInfo.needs_login",
+        "AccountInfo.has_blog",
+        "AccountInfo.state_label",
+        "AccountInfo.to_dict",
+        "_PendingCheck",
+        "AccountService",
+        "AccountService.__init__",
+        "AccountService._load",
+        "AccountService._save",
+        "AccountService.info",
+        "AccountService.snapshot",
+        "AccountService.is_logged_in",
+        "AccountService.current_account_id",
+        "AccountService.blocking_reason",
+        "AccountService.request_check",
+        "AccountService.pending_request",
+        "AccountService.expire_stale_check",
+        "AccountService.apply_report",
+        "AccountService.mark_session_expired",
+        "AccountService.mark_logging_in",
+        "AccountService.clear_account"
+      ]
+    },
+    {
+      "module": "src.services.action_log_service",
+      "code_objects": 15,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "datetime",
+        "src.models.entities",
+        "src.models.enums",
+        "src.utils.datetime_utils",
+        "src.utils.logging_setup",
+        "threading",
+        "typing"
+      ],
+      "string_constants": 193,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "ActionDecision",
+        "ActionDecision.__bool__",
+        "ActionLogService",
+        "ActionLogService.__init__",
+        "ActionLogService.cooldown_hours",
+        "ActionLogService.set_cooldown_hours",
+        "ActionLogService.can_execute",
+        "ActionLogService.begin",
+        "ActionLogService.end",
+        "ActionLogService.running_count",
+        "ActionLogService.clear_running",
+        "ActionLogService.record",
+        "ActionLogService.finish",
+        "ActionLogService.last_action"
+      ]
+    },
+    {
+      "module": "src.services.admin_service",
+      "code_objects": 20,
+      "imports": [
+        "__future__",
+        "src.services.license_service",
+        "src.services.supabase_client",
+        "src.utils.errors",
+        "typing"
+      ],
+      "string_constants": 188,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "AdminService",
+        "AdminService.__init__",
+        "AdminService.available",
+        "AdminService._require",
+        "AdminService._call",
+        "AdminService.feature_limits",
+        "AdminService.feature_limits.<locals>.<genexpr>",
+        "AdminService.feature_limits.<locals>.<genexpr>.<genexpr>",
+        "AdminService.set_feature_limit",
+        "AdminService.notice",
+        "AdminService.notice_preview",
+        "AdminService.set_notice",
+        "AdminService.list_users",
+        "AdminService.find_user",
+        "AdminService.delete_license",
+        "AdminService.upsert_license",
+        "AdminService.set_override",
+        "AdminService.reset_usage",
+        "AdminService.release_device"
+      ]
+    },
+    {
+      "module": "src.services.ai_quota_service",
+      "code_objects": 8,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "src.services.license_service",
+        "src.services.supabase_client",
+        "src.utils.errors",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 82,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "AiQuotaExhausted",
+        "QuotaResult",
+        "QuotaResult.message",
+        "AiQuotaService",
+        "AiQuotaService.__init__",
+        "AiQuotaService.consume",
+        "AiQuotaService.remember"
+      ]
+    },
+    {
+      "module": "src.services.ai_text_service",
+      "code_objects": 23,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "hashlib",
+        "re",
+        "src.services.ai_quota_service",
+        "src.utils.errors",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 195,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "short_limit",
+        "fit_within",
+        "AiContext",
+        "AiTextService",
+        "AiTextService.generate_comment",
+        "AiTextService.generate_reply",
+        "AiTextService.generate_neighbor_request",
+        "AiTextService.generate",
+        "MockAiTextService",
+        "MockAiTextService._pick",
+        "MockAiTextService._topic",
+        "MockAiTextService.generate_comment",
+        "MockAiTextService.generate_reply",
+        "MockAiTextService.generate_neighbor_request",
+        "OpenAiTextService",
+        "OpenAiTextService.__init__",
+        "OpenAiTextService._payload",
+        "OpenAiTextService.generate",
+        "OpenAiTextService.generate_comment",
+        "OpenAiTextService.generate_reply",
+        "OpenAiTextService.generate_neighbor_request",
+        "make_ai_service"
+      ]
+    },
+    {
+      "module": "src.services.auth_service",
+      "code_objects": 23,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "src.services.supabase_client",
+        "src.utils.errors",
+        "src.utils.logging_setup",
+        "typing",
+        "urllib.parse"
+      ],
+      "string_constants": 153,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "Session",
+        "Session.signed_in",
+        "parse_recovery_text",
+        "AuthService",
+        "AuthService.__init__",
+        "AuthService.configured",
+        "AuthService.signed_in",
+        "AuthService.is_admin",
+        "AuthService.token",
+        "AuthService._accept",
+        "AuthService._remember",
+        "AuthService._forget",
+        "AuthService._load_role",
+        "AuthService.sign_up",
+        "AuthService.sign_in",
+        "AuthService.sign_out",
+        "AuthService.recover_password",
+        "AuthService.reset_password",
+        "AuthService._accept_recovery",
+        "AuthService.restore",
+        "AuthService.refresh_if_needed",
+        "AuthService.remembered_email"
+      ]
+    },
+    {
+      "module": "src.services.backup_service",
+      "code_objects": 12,
+      "imports": [
+        "__future__",
+        "datetime",
+        "pathlib",
+        "shutil",
+        "src",
+        "src.database.db",
+        "src.utils.datetime_utils",
+        "src.utils.errors",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 83,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "BackupService",
+        "BackupService.__init__",
+        "BackupService.create_backup",
+        "BackupService.create_backup.<locals>.<genexpr>",
+        "BackupService.auto_backup_if_needed",
+        "BackupService.manual_backup",
+        "BackupService.list_backups",
+        "BackupService.list_backups.<locals>.<lambda>",
+        "BackupService.cleanup",
+        "BackupService.restore",
+        "BackupService.describe"
+      ]
+    },
+    {
+      "module": "src.services.blog_profiles",
+      "code_objects": 30,
+      "imports": [
+        "__future__",
+        "dataclasses"
+      ],
+      "string_constants": 251,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "FieldPreset",
+        "get_preset",
+        "BlogProfile",
+        "BlogProfile._preset",
+        "BlogProfile.field_label",
+        "BlogProfile.categories",
+        "BlogProfile.keyword_hints",
+        "BlogProfile.keyword_signals",
+        "BlogProfile.accent",
+        "BlogProfile.description",
+        "BlogProfile.display",
+        "BlogProfile.owner_label",
+        "BlogProfile.default_settings",
+        "set_profiles",
+        "get_profiles",
+        "has_profiles",
+        "profile_ids",
+        "default_profile_id",
+        "get_profile",
+        "is_known_profile",
+        "is_known_profile.<locals>.<genexpr>",
+        "normalize_profile_name",
+        "all_categories",
+        "keyword_fits",
+        "keyword_fits.<locals>.<genexpr>",
+        "keyword_fits.<locals>.<genexpr>",
+        "_without_neutral_words",
+        "other_profile_for_keyword",
+        "other_profile_for_keyword.<locals>.<genexpr>"
+      ]
+    },
+    {
+      "module": "src.services.bridge_controller",
+      "code_objects": 62,
+      "imports": [
+        "__future__",
+        "collections.abc",
+        "contextlib",
+        "datetime",
+        "json",
+        "src",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.services.bridge_server",
+        "src.services.browser_session",
+        "src.services.interaction_session",
+        "src.services.neighbor_session",
+        "src.utils.datetime_utils",
+        "src.utils.logging_setup",
+        "typing"
+      ],
+      "string_constants": 390,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "bundled_extension_version",
+        "BridgeController",
+        "BridgeController.__init__",
+        "BridgeController.__init__.<locals>.<lambda>",
+        "BridgeController.__init__.<locals>.<lambda>",
+        "BridgeController.__init__.<locals>.<lambda>",
+        "BridgeController.__init__.<locals>.<lambda>",
+        "BridgeController.start_server",
+        "BridgeController.stop_server",
+        "BridgeController.running",
+        "BridgeController.begin_pairing",
+        "BridgeController.disconnect",
+        "BridgeController.is_paired",
+        "BridgeController.connection_summary",
+        "BridgeController._recently_seen",
+        "BridgeController.start_session",
+        "BridgeController.stop_session",
+        "BridgeController.pause_session",
+        "BridgeController.resume_session",
+        "BridgeController.skip_current",
+        "BridgeController.retry_current",
+        "BridgeController.next_target",
+        "BridgeController.request_page_report",
+        "BridgeController.fill_again",
+        "BridgeController.open_current",
+        "BridgeController.update_message",
+        "BridgeController.confirm_completed",
+        "BridgeController.mark_failed",
+        "BridgeController.snapshot",
+        "BridgeController.check_login",
+        "BridgeController.running_job_name",
+        "BridgeController.busy_reason",
+        "BridgeController.onestop_step",
+        "BridgeController._neighbor_precheck",
+        "BridgeController.start_neighbor_collect",
+        "BridgeController.start_activity_check",
+        "BridgeController.start_responder_activity_check",
+        "BridgeController.stop_neighbor_job",
+        "BridgeController.start_interaction",
+        "BridgeController.start_comment_replies",
+        "BridgeController.start_responder_collect",
+        "BridgeController.start_reaction_probe",
+        "BridgeController.stop_interaction",
+        "BridgeController.interaction_snapshot",
+        "BridgeController.neighbor_snapshot",
+        "BridgeController._on_poll",
+        "BridgeController._account_service",
+        "BridgeController._on_account",
+        "BridgeController._on_neighbors",
+        "BridgeController._on_neighbor_activity",
+        "BridgeController._on_interaction",
+        "BridgeController._on_responders",
+        "BridgeController._on_my_posts",
+        "BridgeController._on_comment_reply",
+        "BridgeController._on_reaction_probe",
+        "BridgeController._on_status",
+        "BridgeController._on_result",
+        "BridgeController._on_like",
+        "BridgeController._on_ai_text",
+        "BridgeController._on_diagnose",
+        "BridgeController._on_message"
+      ]
+    },
+    {
+      "module": "src.services.bridge_server",
+      "code_objects": 33,
+      "imports": [
+        "__future__",
+        "collections.abc",
+        "http.server",
+        "json",
+        "secrets",
+        "src.utils.datetime_utils",
+        "src.utils.logging_setup",
+        "threading",
+        "typing"
+      ],
+      "string_constants": 221,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_is_extension_origin",
+        "BridgeState",
+        "BridgeState.__init__",
+        "BridgeState.snapshot",
+        "BridgeState.touch",
+        "QuietHTTPServer",
+        "QuietHTTPServer.handle_error",
+        "BridgeHandler",
+        "BridgeHandler.log_message",
+        "BridgeHandler._origin",
+        "BridgeHandler._cors_headers",
+        "BridgeHandler._send_json",
+        "BridgeHandler._read_json",
+        "BridgeHandler.do_OPTIONS",
+        "BridgeHandler.do_GET",
+        "BridgeHandler.do_POST",
+        "BridgeHandler._handle",
+        "BridgeServer",
+        "BridgeServer.__init__",
+        "BridgeServer.start",
+        "BridgeServer.stop",
+        "BridgeServer.running",
+        "BridgeServer.base_url",
+        "BridgeServer.check_token",
+        "BridgeServer.check_origin",
+        "BridgeServer.allowed_origin",
+        "BridgeServer.new_pairing_code",
+        "BridgeServer.new_pairing_code.<locals>.<genexpr>",
+        "BridgeServer.new_token",
+        "BridgeServer.disconnect",
+        "BridgeServer.route",
+        "BridgeServer._pair"
+      ]
+    },
+    {
+      "module": "src.services.browser_session",
+      "code_objects": 46,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "secrets",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.services.ai_text_service",
+        "src.services.phrase_source",
+        "src.services.template_service",
+        "src.utils.datetime_utils",
+        "src.utils.logging_setup",
+        "threading",
+        "time",
+        "typing"
+      ],
+      "string_constants": 556,
+      "sql_constants": 1,
+      "tables": [],
+      "symbols": [
+        "BrowserTask",
+        "BrowserTask.kind",
+        "BrowserTask.to_payload",
+        "SessionCounters",
+        "SessionCounters.as_dict",
+        "BrowserSession",
+        "BrowserSession.__init__",
+        "BrowserSession._work_type_for",
+        "BrowserSession._work_types_for",
+        "BrowserSession.build_tasks",
+        "BrowserSession._without_names",
+        "BrowserSession._generate_message",
+        "BrowserSession._ai_wanted",
+        "BrowserSession._my_topic",
+        "BrowserSession._wants_post_text",
+        "BrowserSession.record_like",
+        "BrowserSession._recent_comment_texts",
+        "BrowserSession._ai_message",
+        "BrowserSession.prepare_current",
+        "BrowserSession.fill_ai_text",
+        "BrowserSession.start",
+        "BrowserSession.stop",
+        "BrowserSession.pause",
+        "BrowserSession.resume",
+        "BrowserSession.set_status",
+        "BrowserSession.push_command",
+        "BrowserSession.take_command",
+        "BrowserSession.current",
+        "BrowserSession.task_by_id",
+        "BrowserSession.update_message",
+        "BrowserSession._record",
+        "BrowserSession._account_id",
+        "BrowserSession._push_recent",
+        "BrowserSession._phase_text",
+        "BrowserSession._progress_view_locked",
+        "BrowserSession._drop_remaining",
+        "BrowserSession._count",
+        "BrowserSession.report_outcome",
+        "BrowserSession.check_stalled",
+        "BrowserSession._unattended",
+        "BrowserSession._skip_unattended_wait_locked",
+        "BrowserSession.advance",
+        "BrowserSession.skip_current",
+        "BrowserSession.retry_current",
+        "BrowserSession.snapshot"
+      ]
+    },
+    {
+      "module": "src.services.dedupe_service",
+      "code_objects": 7,
+      "imports": [
+        "__future__",
+        "src.database.db",
+        "src.models.entities",
+        "src.models.enums"
+      ],
+      "string_constants": 56,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "DedupeService",
+        "DedupeService.__init__",
+        "DedupeService.check_target",
+        "DedupeService.check_target.<locals>.remember",
+        "DedupeService.check_before_work",
+        "DedupeService.mark_duplicates"
+      ]
+    },
+    {
+      "module": "src.services.default_templates",
+      "code_objects": 7,
+      "imports": [
+        "__future__",
+        "src.models.enums",
+        "src.services",
+        "src.services.blog_profiles"
+      ],
+      "string_constants": 334,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_t",
+        "_f",
+        "_preset_for",
+        "neighbor_templates",
+        "comment_templates",
+        "fragments"
+      ]
+    },
+    {
+      "module": "src.services.device_service",
+      "code_objects": 11,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "pathlib",
+        "platform",
+        "re",
+        "src",
+        "src.services.supabase_client",
+        "src.utils.errors",
+        "src.utils.logging_setup",
+        "uuid"
+      ],
+      "string_constants": 81,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "DeviceResult",
+        "DeviceResult.message",
+        "DeviceService",
+        "DeviceService.__init__",
+        "DeviceService.state_path",
+        "DeviceService._read_state",
+        "DeviceService._write_state",
+        "DeviceService.install_id",
+        "DeviceService.device_name",
+        "DeviceService.register"
+      ]
+    },
+    {
+      "module": "src.services.excel_service",
+      "code_objects": 25,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "datetime",
+        "openpyxl",
+        "openpyxl.styles",
+        "openpyxl.utils",
+        "openpyxl.worksheet.datavalidation",
+        "openpyxl.worksheet.worksheet",
+        "pathlib",
+        "src",
+        "src.database.db",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.utils.datetime_utils",
+        "src.utils.errors",
+        "src.utils.logging_setup",
+        "typing"
+      ],
+      "string_constants": 530,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "ImportRow",
+        "ImportResult",
+        "ImportResult.summary",
+        "_check_writable",
+        "ExcelService",
+        "ExcelService.__init__",
+        "ExcelService.export",
+        "ExcelService.export_blank_form",
+        "ExcelService._write_header",
+        "ExcelService._apply_target_validation",
+        "ExcelService._write_targets_sheet",
+        "ExcelService._write_history_sheet",
+        "ExcelService._write_templates_sheet",
+        "ExcelService._write_settings_sheet",
+        "ExcelService._write_guide_sheet",
+        "ExcelService.preview_import",
+        "ExcelService.preview_import.<locals>.<genexpr>",
+        "ExcelService.preview_import.<locals>.<genexpr>",
+        "ExcelService.preview_import.<locals>.<genexpr>",
+        "ExcelService.preview_import.<locals>.<genexpr>",
+        "ExcelService._parse_row",
+        "ExcelService._parse_row.<locals>.value_of",
+        "ExcelService.import_targets",
+        "ExcelService.default_export_name"
+      ]
+    },
+    {
+      "module": "src.services.interaction_service",
+      "code_objects": 48,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "random",
+        "re",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.utils.datetime_utils",
+        "src.utils.logging_setup",
+        "typing"
+      ],
+      "string_constants": 441,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "InteractionTarget",
+        "InteractionTarget.display_name",
+        "InteractionTarget.has_post",
+        "InteractionTarget.to_payload",
+        "InteractionPlan",
+        "InteractionPlan.does_like",
+        "InteractionPlan.does_comment",
+        "InteractionPlan.next_delay",
+        "like_code_from",
+        "comment_code_from",
+        "InteractionResult",
+        "InteractionResult.succeeded",
+        "InteractionResult.skipped",
+        "InteractionService",
+        "InteractionService.__init__",
+        "InteractionService.db",
+        "InteractionService.actions",
+        "InteractionService.neighbors",
+        "InteractionService.account_id",
+        "InteractionService.load_plan",
+        "InteractionService.load_plan.<locals>.number",
+        "InteractionService.save_mode",
+        "InteractionService.save_max_targets",
+        "InteractionService.comment_templates",
+        "InteractionService.reply_templates",
+        "InteractionService.has_usable_reply",
+        "InteractionService.has_usable_comment",
+        "InteractionService.ensure_default_replies",
+        "InteractionService.ensure_default_comments",
+        "InteractionService.render_comment",
+        "InteractionService.render_comment.<locals>.replace",
+        "InteractionService.pick_comment",
+        "InteractionService.pick_reply",
+        "InteractionService._pick_phrase",
+        "InteractionService.validate_comment",
+        "InteractionService.targets_from_neighbors",
+        "InteractionService.targets_from_responders",
+        "InteractionService.check_allowed",
+        "InteractionService.allowed_actions",
+        "InteractionService.record_reply_result",
+        "InteractionService.record_result",
+        "InteractionService.record_result.<locals>.write",
+        "InteractionService.record_skipped",
+        "InteractionService.reaction_support",
+        "InteractionService.reaction_support_note",
+        "InteractionService.reaction_support_checked_at",
+        "InteractionService.set_reaction_support"
+      ]
+    },
+    {
+      "module": "src.services.interaction_session",
+      "code_objects": 43,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "json",
+        "src.models.enums",
+        "src.services",
+        "src.services.ai_text_service",
+        "src.services.interaction_service",
+        "src.services.phrase_source",
+        "src.utils.datetime_utils",
+        "src.utils.logging_setup",
+        "threading",
+        "time",
+        "typing"
+      ],
+      "string_constants": 694,
+      "sql_constants": 1,
+      "tables": [],
+      "symbols": [
+        "newest_first",
+        "newest_first.<locals>.key",
+        "InteractionJob",
+        "InteractionJob.total",
+        "InteractionJob.active",
+        "InteractionJob.current",
+        "InteractionSession",
+        "InteractionSession.__init__",
+        "InteractionSession.service",
+        "InteractionSession.responders",
+        "InteractionSession.active",
+        "InteractionSession.snapshot",
+        "InteractionSession._progress_view_locked",
+        "InteractionSession._push_recent_locked",
+        "InteractionSession.start_interaction",
+        "InteractionSession._discovery",
+        "InteractionSession.start_comment_replies",
+        "InteractionSession.start_responder_collect",
+        "InteractionSession.start_reaction_probe",
+        "InteractionSession._reply_body",
+        "InteractionSession._rss_summary",
+        "InteractionSession._rss_enabled",
+        "InteractionSession._start_rss_lookup",
+        "InteractionSession._start_rss_lookup.<locals>.run",
+        "InteractionSession.wait_my_posts_lookup",
+        "InteractionSession.stop",
+        "InteractionSession._finish",
+        "InteractionSession._record_summary",
+        "InteractionSession.wants_post_text",
+        "InteractionSession.fill_ai_text",
+        "InteractionSession._recent_ai_texts",
+        "InteractionSession._ai_text_for_current",
+        "InteractionSession._touch",
+        "InteractionSession.check_stalled",
+        "InteractionSession.pending_command",
+        "InteractionSession.apply_interaction",
+        "InteractionSession.skip_current",
+        "InteractionSession.apply_comment_reply",
+        "InteractionSession.apply_my_posts",
+        "InteractionSession._log_diagnosis",
+        "InteractionSession.apply_responder_page",
+        "InteractionSession.apply_reaction_probe"
+      ]
+    },
+    {
+      "module": "src.services.license_service",
+      "code_objects": 37,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "datetime",
+        "src.services.supabase_client",
+        "src.utils.errors",
+        "src.utils.logging_setup",
+        "time",
+        "typing"
+      ],
+      "string_constants": 231,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "today_kst",
+        "days_left_until",
+        "days_label_for",
+        "tier_rank",
+        "tier_allows",
+        "lowest_tier_for",
+        "_parse_time",
+        "LicenseStatus",
+        "LicenseStatus.active",
+        "LicenseStatus.ai_remaining_today",
+        "LicenseStatus.ai_limit_for",
+        "LicenseStatus.ai_used_for",
+        "LicenseStatus.ai_remaining_for",
+        "LicenseStatus.ai_exhausted",
+        "LicenseStatus.ai_feature_label",
+        "LicenseStatus.ai_usable_features",
+        "LicenseStatus.allows",
+        "LicenseStatus.lock_reason",
+        "LicenseStatus.plan_label",
+        "LicenseStatus.ai_label",
+        "LicenseStatus.ai_label.<locals>.<genexpr>",
+        "LicenseStatus.ai_label.<locals>.<genexpr>",
+        "LicenseStatus.ai_detail_lines",
+        "LicenseStatus.days_label",
+        "LicenseStatus.plan_label_with_days",
+        "LicenseService",
+        "LicenseService.__init__",
+        "LicenseService.invalidate",
+        "LicenseService.status",
+        "LicenseService.stale",
+        "LicenseService._compute",
+        "LicenseService._fill",
+        "LicenseService._fill.<locals>.<genexpr>",
+        "LicenseService._fill.<locals>.<genexpr>",
+        "LicenseService._fill.<locals>.<genexpr>",
+        "LicenseService._fill.<locals>.<lambda>"
+      ]
+    },
+    {
+      "module": "src.services.naver_api_service",
+      "code_objects": 38,
+      "imports": [
+        "__future__",
+        "collections.abc",
+        "dataclasses",
+        "html",
+        "json",
+        "re",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.utils",
+        "src.utils.errors",
+        "src.utils.logging_setup",
+        "ssl",
+        "urllib.error",
+        "urllib.parse",
+        "urllib.request"
+      ],
+      "string_constants": 371,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "normalize_hub_url",
+        "NaverApiError",
+        "clean_text",
+        "_format_post_date",
+        "_format_post_date.<locals>.<genexpr>",
+        "SearchItem",
+        "SearchItem.is_naver_blog",
+        "SearchItem.to_target",
+        "SearchResult",
+        "SearchResult.new_count",
+        "SearchResult.new_count.<locals>.<genexpr>",
+        "SearchResult.summary",
+        "NaverSearchService",
+        "NaverSearchService.__init__",
+        "NaverSearchService.credentials",
+        "NaverSearchService.credentials_source",
+        "NaverSearchService.is_from_env",
+        "NaverSearchService.is_configured",
+        "NaverSearchService.save_credentials",
+        "NaverSearchService.clear_credentials",
+        "NaverSearchService.mode",
+        "NaverSearchService.set_mode",
+        "NaverSearchService.hub_url",
+        "NaverSearchService.set_hub_url",
+        "NaverSearchService.working_mode",
+        "NaverSearchService._modes_to_try",
+        "NaverSearchService._endpoint",
+        "NaverSearchService._call_once",
+        "NaverSearchService._request",
+        "NaverSearchService._http_error",
+        "NaverSearchService.search",
+        "NaverSearchService.search_many",
+        "NaverSearchService._items_of",
+        "NaverSearchService._parse_item",
+        "NaverSearchService._mark_duplicate",
+        "NaverSearchService.test_connection",
+        "NaverSearchService.register_items"
+      ]
+    },
+    {
+      "module": "src.services.neighbor_request_service",
+      "code_objects": 15,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "src.models.entities",
+        "src.models.enums",
+        "src.utils.datetime_utils",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 155,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "RequestDecision",
+        "RequestDecision.__bool__",
+        "NeighborRequestService",
+        "NeighborRequestService.__init__",
+        "NeighborRequestService.db",
+        "NeighborRequestService.actions",
+        "NeighborRequestService.neighbors",
+        "NeighborRequestService.account_id",
+        "NeighborRequestService.has_active_template",
+        "NeighborRequestService.can_request",
+        "NeighborRequestService.record_request",
+        "NeighborRequestService.link_from_target",
+        "NeighborRequestService.record_skipped",
+        "NeighborRequestService.record_failed"
+      ]
+    },
+    {
+      "module": "src.services.neighbor_service",
+      "code_objects": 38,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "datetime",
+        "re",
+        "src.models.entities",
+        "src.models.enums",
+        "src.utils.datetime_utils",
+        "src.utils.logging_setup",
+        "typing"
+      ],
+      "string_constants": 263,
+      "sql_constants": 1,
+      "tables": [],
+      "symbols": [
+        "NeighborStats",
+        "NeighborStats.as_dict",
+        "NeighborService",
+        "NeighborService.__init__",
+        "NeighborService.account_id",
+        "NeighborService.dormant_days",
+        "NeighborService.set_dormant_days",
+        "NeighborService.unanswered_days",
+        "NeighborService.set_unanswered_days",
+        "NeighborService.recheck_hours",
+        "NeighborService._int_setting",
+        "NeighborService.save_collected",
+        "NeighborService.save_activity",
+        "NeighborService.clear_all",
+        "NeighborService.get_by_blog_id",
+        "NeighborService.all_neighbors",
+        "NeighborService.count",
+        "NeighborService.by_relationship",
+        "NeighborService.mutual_neighbors",
+        "NeighborService.following_only",
+        "NeighborService.active_neighbors",
+        "NeighborService.dormant_neighbors",
+        "NeighborService.failed_neighbors",
+        "NeighborService.filter_neighbors",
+        "NeighborService.excluded_neighbors",
+        "NeighborService.delete_by_ids",
+        "NeighborService.set_excluded",
+        "NeighborService.combined_filter",
+        "NeighborService.needing_activity_check",
+        "NeighborService.link_request_dates",
+        "NeighborService.pending_requests",
+        "NeighborService.unanswered_requests",
+        "NeighborService.needs_relation_check",
+        "NeighborService.stats",
+        "NeighborService.record_summary",
+        "_normalize_date",
+        "_normalize_date.<locals>.<genexpr>"
+      ]
+    },
+    {
+      "module": "src.services.neighbor_session",
+      "code_objects": 33,
+      "imports": [
+        "__future__",
+        "collections.abc",
+        "dataclasses",
+        "datetime",
+        "json",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.utils.datetime_utils",
+        "src.utils.logging_setup",
+        "threading",
+        "time",
+        "typing"
+      ],
+      "string_constants": 401,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_seconds_since",
+        "NeighborJob",
+        "NeighborJob.total",
+        "NeighborJob.progress_done",
+        "NeighborJob.progress_total",
+        "NeighborJob.active",
+        "NeighborSession",
+        "NeighborSession.__init__",
+        "NeighborSession.service",
+        "NeighborSession.active",
+        "NeighborSession.snapshot",
+        "NeighborSession._progress_view_locked",
+        "NeighborSession.start_collect",
+        "NeighborSession.start_activity_check",
+        "NeighborSession._save_activity",
+        "NeighborSession.wait_rss",
+        "NeighborSession._run_rss_phase",
+        "NeighborSession._run_rss_phase.<locals>.should_stop",
+        "NeighborSession._run_rss_phase.<locals>.on_result",
+        "NeighborSession._push_recent_locked",
+        "NeighborSession.stop",
+        "NeighborSession._log_diagnosis",
+        "NeighborSession._finish",
+        "NeighborSession._record_summary",
+        "NeighborSession._touch",
+        "NeighborSession.check_stalled",
+        "NeighborSession.pending_command",
+        "NeighborSession._delay_seconds",
+        "NeighborSession._set_current_locked",
+        "NeighborSession.apply_page",
+        "NeighborSession.apply_activity",
+        "NeighborSession.build_activity_queue"
+      ]
+    },
+    {
+      "module": "src.services.onestop_service",
+      "code_objects": 28,
+      "imports": [
+        "__future__",
+        "collections.abc",
+        "dataclasses",
+        "random",
+        "src.utils.datetime_utils",
+        "src.utils.logging_setup",
+        "time",
+        "typing"
+      ],
+      "string_constants": 223,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "step_rest_delay",
+        "step_rest_label",
+        "OneStopStep",
+        "OneStopStep.<lambda>",
+        "OneStopStep.<lambda>",
+        "StepRecord",
+        "OneStopRunner",
+        "OneStopRunner.<lambda>",
+        "OneStopRunner.active",
+        "OneStopRunner.current",
+        "OneStopRunner.start",
+        "OneStopRunner.stop",
+        "OneStopRunner.tick",
+        "OneStopRunner._begin",
+        "OneStopRunner._record",
+        "OneStopRunner._record.<locals>.<genexpr>",
+        "OneStopRunner._safe_stop",
+        "OneStopRunner._safe_summary",
+        "OneStopRunner._advance",
+        "OneStopRunner._finish",
+        "OneStopRunner._abort",
+        "OneStopRunner.counts",
+        "OneStopRunner.report_line",
+        "OneStopRunner.report",
+        "OneStopRunner._inner",
+        "OneStopRunner.fraction",
+        "OneStopRunner.progress_view"
+      ]
+    },
+    {
+      "module": "src.services.pacing",
+      "code_objects": 9,
+      "imports": [
+        "__future__",
+        "random"
+      ],
+      "string_constants": 28,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "submit_delay",
+        "step_delay",
+        "rest_delay",
+        "is_rest_point",
+        "delay_for",
+        "rest_label",
+        "submit_delay_label",
+        "step_delay_label"
+      ]
+    },
+    {
+      "module": "src.services.phrase_source",
+      "code_objects": 8,
+      "imports": [
+        "__future__",
+        "src.services.ai_quota_service",
+        "src.services.ai_text_service",
+        "src.services.license_service",
+        "src.utils.errors",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 45,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "PhraseSource",
+        "PhraseSource.__init__",
+        "PhraseSource.ai_wanted",
+        "PhraseSource.maybe_ai",
+        "PhraseSource._ai_from_server",
+        "PhraseSource.blocking_reason",
+        "PhraseSource.blocking_reason.<locals>.<genexpr>"
+      ]
+    },
+    {
+      "module": "src.services.responder_service",
+      "code_objects": 26,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services.neighbor_service",
+        "src.utils.datetime_utils",
+        "src.utils.logging_setup",
+        "typing"
+      ],
+      "string_constants": 233,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "ResponderStats",
+        "ResponderStats.as_dict",
+        "ResponderService",
+        "ResponderService.__init__",
+        "ResponderService.account_id",
+        "ResponderService.my_blog_id",
+        "ResponderService.save_reactions",
+        "ResponderService.my_post_counts",
+        "ResponderService.remember_my_post",
+        "ResponderService.clear_all",
+        "ResponderService.comment_reply_tasks",
+        "ResponderService.mark_comment_reply",
+        "ResponderService.pending_comment_reply_count",
+        "ResponderService.save_activity",
+        "ResponderService.needing_activity_check",
+        "ResponderService.get_by_blog_id",
+        "ResponderService.all_responders",
+        "ResponderService.count",
+        "ResponderService.by_reaction",
+        "ResponderService.by_reply_status",
+        "ResponderService.pending_replies",
+        "ResponderService.unidentified",
+        "ResponderService.filter_responders",
+        "ResponderService.stats",
+        "ResponderService.record_collect_summary"
+      ]
+    },
+    {
+      "module": "src.services.rss_service",
+      "code_objects": 13,
+      "imports": [
+        "__future__",
+        "collections.abc",
+        "concurrent.futures",
+        "datetime",
+        "email.utils",
+        "html",
+        "re",
+        "src.models.enums",
+        "src.utils.logging_setup",
+        "typing",
+        "urllib.error",
+        "urllib.request",
+        "xml.etree"
+      ],
+      "string_constants": 156,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_valid_blog_id",
+        "rss_url",
+        "_post_id_of",
+        "_date_of",
+        "parse_rss",
+        "_read_rss_text",
+        "fetch_latest_post",
+        "_plain_text",
+        "parse_rss_posts",
+        "fetch_recent_posts",
+        "check_many",
+        "check_many.<locals>.one"
+      ]
+    },
+    {
+      "module": "src.services.supabase_check",
+      "code_objects": 12,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "src.services.supabase_client",
+        "src.utils.errors",
+        "sys",
+        "typing"
+      ],
+      "string_constants": 129,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "CheckItem",
+        "CheckItem.icon",
+        "CheckItem.line",
+        "_looks_secret",
+        "check_project",
+        "_probe",
+        "_short",
+        "all_ok",
+        "all_ok.<locals>.<genexpr>",
+        "summarize",
+        "summarize.<locals>.<genexpr>"
+      ]
+    },
+    {
+      "module": "src.services.supabase_client",
+      "code_objects": 25,
+      "imports": [
+        "__future__",
+        "collections.abc",
+        "json",
+        "src.utils.errors",
+        "src.utils.logging_setup",
+        "typing",
+        "urllib.error",
+        "urllib.parse",
+        "urllib.request"
+      ],
+      "string_constants": 268,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "AuthError",
+        "NetworkError",
+        "ServerError",
+        "_make_transport",
+        "_make_transport.<locals>.transport",
+        "friendly_auth_message",
+        "SupabaseClient",
+        "SupabaseClient.__init__",
+        "SupabaseClient.configured",
+        "SupabaseClient.probe",
+        "SupabaseClient._headers",
+        "SupabaseClient._call",
+        "SupabaseClient._error_text",
+        "SupabaseClient.sign_up",
+        "SupabaseClient.sign_in",
+        "SupabaseClient.refresh_session",
+        "SupabaseClient.sign_out",
+        "SupabaseClient.recover_password",
+        "SupabaseClient.verify_recovery",
+        "SupabaseClient.verify_recovery_hash",
+        "SupabaseClient.current_user",
+        "SupabaseClient.update_password",
+        "SupabaseClient.select",
+        "SupabaseClient.rpc"
+      ]
+    },
+    {
+      "module": "src.services.system_service",
+      "code_objects": 7,
+      "imports": [
+        "PySide6.QtWidgets",
+        "__future__",
+        "pyperclip",
+        "src.services",
+        "src.utils.errors",
+        "src.utils.logging_setup",
+        "webbrowser"
+      ],
+      "string_constants": 50,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "open_in_browser",
+        "open_search",
+        "_qt_clipboard",
+        "copy_text",
+        "paste_text",
+        "urls_from_clipboard"
+      ]
+    },
+    {
+      "module": "src.services.target_filter_service",
+      "code_objects": 30,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "datetime",
+        "json",
+        "src.models.enums",
+        "src.utils.logging_setup",
+        "typing"
+      ],
+      "string_constants": 230,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "TargetFilter",
+        "TargetFilter.to_dict",
+        "TargetFilter.from_dict",
+        "TargetFilter.split_words",
+        "TargetFilter.is_empty",
+        "FilterResult",
+        "FilterResult.total",
+        "FilterResult.reason_counts",
+        "FilterResult.summary",
+        "TargetFilterService",
+        "TargetFilterService.__init__",
+        "TargetFilterService.db",
+        "TargetFilterService.load",
+        "TargetFilterService.save",
+        "TargetFilterService.preset_names",
+        "TargetFilterService._user_presets",
+        "TargetFilterService.load_preset",
+        "TargetFilterService.save_preset",
+        "TargetFilterService.delete_preset",
+        "TargetFilterService.apply",
+        "TargetFilterService._my_blog_id",
+        "TargetFilterService._reason_to_skip",
+        "TargetFilterService._reason_to_skip.<locals>.<genexpr>",
+        "TargetFilterService._reason_to_skip.<locals>.<genexpr>",
+        "TargetFilterService._reason_to_skip.<locals>.<genexpr>",
+        "TargetFilterService._reason_to_skip.<locals>.<genexpr>",
+        "TargetFilterService._duplicate_reason",
+        "TargetFilterService._recent_work_reason",
+        "_days_since"
+      ]
+    },
+    {
+      "module": "src.services.target_service",
+      "code_objects": 19,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "src.database.db",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.services.dedupe_service",
+        "src.utils.datetime_utils",
+        "src.utils.errors",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 210,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "RegisterResult",
+        "RegisterResult.summary",
+        "TargetService",
+        "TargetService.__init__",
+        "TargetService._account_id",
+        "TargetService.build_from_url",
+        "TargetService.register_target",
+        "TargetService.register_urls",
+        "TargetService.register_urls.<locals>.<genexpr>",
+        "TargetService.save_target",
+        "TargetService.mark_already_neighbor",
+        "TargetService.register_known_neighbors",
+        "TargetService._next_status",
+        "TargetService.complete_work",
+        "TargetService.skip_target",
+        "TargetService.mark_generated",
+        "TargetService.pending_targets",
+        "TargetService.next_target"
+      ]
+    },
+    {
+      "module": "src.services.template_service",
+      "code_objects": 44,
+      "imports": [
+        "__future__",
+        "collections",
+        "collections.abc",
+        "dataclasses",
+        "random",
+        "re",
+        "src.database.db",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.utils.errors",
+        "src.utils.korean",
+        "src.utils.logging_setup",
+        "typing"
+      ],
+      "string_constants": 444,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_normalized",
+        "find_form_of_address",
+        "remove_form_of_address",
+        "remove_form_of_address.<locals>.drop",
+        "GeneratedPhrase",
+        "GeneratedPhrase.__str__",
+        "find_variables",
+        "validate_template_body",
+        "validate_template_body.<locals>.<genexpr>",
+        "TemplateService",
+        "TemplateService.__init__",
+        "TemplateService._remember",
+        "TemplateService._is_recent_in_memory",
+        "TemplateService.ensure_defaults",
+        "TemplateService.forget_recent",
+        "TemplateService.ensure_defaults_for_all_profiles",
+        "TemplateService.build_context",
+        "TemplateService.render",
+        "TemplateService.render.<locals>.<genexpr>",
+        "TemplateService.looks_like_ad",
+        "TemplateService.looks_like_ad.<locals>.<genexpr>",
+        "TemplateService.looks_lazy",
+        "TemplateService.quality_warnings",
+        "TemplateService._usable_fragments",
+        "TemplateService._usable_fragments.<locals>.<genexpr>",
+        "TemplateService.compose_from_fragments",
+        "TemplateService._candidate_templates",
+        "TemplateService.forbidden_names",
+        "TemplateService._score",
+        "TemplateService.generate",
+        "TemplateService.generate.<locals>.<genexpr>",
+        "TemplateService._generate_from_user_templates",
+        "TemplateService._generate_from_user_templates.<locals>.recent_rank",
+        "TemplateService._generate_from_user_templates.<locals>.<genexpr>",
+        "TemplateService.generate_many",
+        "TemplateService.generate_many.<locals>.<genexpr>",
+        "TemplateService.record_used",
+        "TemplateService._clear_stale_generated_text",
+        "TemplateService._same_opening",
+        "TemplateService._same_opening.<locals>.head",
+        "TemplateService._key",
+        "TemplateService._decorate",
+        "TemplateService._fallback_text"
+      ]
+    },
+    {
+      "module": "src.services.url_service",
+      "code_objects": 19,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "re",
+        "src",
+        "src.utils.errors",
+        "urllib.parse"
+      ],
+      "string_constants": 163,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "ParsedUrl",
+        "ParsedUrl.has_post",
+        "_add_scheme",
+        "clean_url_text",
+        "extract_urls",
+        "is_valid_blog_id",
+        "build_blog_url",
+        "build_post_url",
+        "parse_naver_blog_url",
+        "normalize_url",
+        "extract_blog_id",
+        "extract_post_no",
+        "build_buddy_add_url",
+        "is_buddy_add_url",
+        "build_comment_url",
+        "build_post_view_url",
+        "is_comment_url",
+        "build_search_url"
+      ]
+    },
+    {
+      "module": "src.ui",
+      "code_objects": 1,
+      "imports": [],
+      "string_constants": 0,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": []
+    },
+    {
+      "module": "src.ui.account_dialog",
+      "code_objects": 45,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "collections.abc",
+        "datetime",
+        "src",
+        "src.services.license_service",
+        "src.ui.widgets",
+        "src.utils.errors",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 318,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "describe_licenses",
+        "run_busy",
+        "_password_edit",
+        "_title",
+        "_hint",
+        "SignupDialog",
+        "SignupDialog.__init__",
+        "SignupDialog.email",
+        "SignupDialog._say",
+        "SignupDialog.problem",
+        "SignupDialog.submit",
+        "SignupDialog.submit.<locals>.action",
+        "PasswordResetDialog",
+        "PasswordResetDialog.__init__",
+        "PasswordResetDialog.email",
+        "PasswordResetDialog._buttons",
+        "PasswordResetDialog._say",
+        "PasswordResetDialog.send_mail",
+        "PasswordResetDialog.send_mail.<locals>.<lambda>",
+        "PasswordResetDialog.problem",
+        "PasswordResetDialog.change_password",
+        "PasswordResetDialog.change_password.<locals>.action",
+        "AccountLoginDialog",
+        "AccountLoginDialog.__init__",
+        "AccountLoginDialog._say",
+        "AccountLoginDialog._run",
+        "AccountLoginDialog._credentials",
+        "AccountLoginDialog.login",
+        "AccountLoginDialog.login.<locals>.<lambda>",
+        "AccountLoginDialog._signup_dialog",
+        "AccountLoginDialog.sign_up",
+        "AccountLoginDialog._reset_dialog",
+        "AccountLoginDialog.reset_password",
+        "AccountDialog",
+        "AccountDialog.__init__",
+        "AccountDialog.__init__.<locals>.<lambda>",
+        "AccountDialog.refresh",
+        "AccountDialog._state",
+        "AccountDialog._changed",
+        "AccountDialog.login",
+        "AccountDialog.logout",
+        "AccountDialog.reset_password",
+        "AccountDialog.open_admin",
+        "run_login_gate"
+      ]
+    },
+    {
+      "module": "src.ui.dialogs",
+      "code_objects": 12,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.ui.widgets"
+      ],
+      "string_constants": 157,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "TargetEditDialog",
+        "TargetEditDialog.__init__",
+        "TargetEditDialog._save",
+        "MultiUrlDialog",
+        "MultiUrlDialog.__init__",
+        "MultiUrlDialog._accept",
+        "ImportErrorDialog",
+        "ImportErrorDialog.__init__",
+        "KnownNeighborDialog",
+        "KnownNeighborDialog.__init__",
+        "KnownNeighborDialog._accept"
+      ]
+    },
+    {
+      "module": "src.ui.login_dialog",
+      "code_objects": 8,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "src.models.enums",
+        "src.ui.widgets"
+      ],
+      "string_constants": 79,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "LoginStatusDialog",
+        "LoginStatusDialog.__init__",
+        "LoginStatusDialog.refresh",
+        "LoginStatusDialog.open_login",
+        "LoginStatusDialog.recheck",
+        "LoginStatusDialog.clear_account",
+        "LoginStatusDialog.done"
+      ]
+    },
+    {
+      "module": "src.ui.main_window",
+      "code_objects": 54,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtGui",
+        "PySide6.QtWidgets",
+        "__future__",
+        "pathlib",
+        "src",
+        "src.app_context",
+        "src.services",
+        "src.ui",
+        "src.ui.account_dialog",
+        "src.ui.dialogs",
+        "src.ui.login_dialog",
+        "src.ui.pages.admin_page",
+        "src.ui.pages.browser_page",
+        "src.ui.pages.comment_page",
+        "src.ui.pages.dashboard_page",
+        "src.ui.pages.excel_page",
+        "src.ui.pages.history_page",
+        "src.ui.pages.home_page",
+        "src.ui.pages.neighbor_page",
+        "src.ui.pages.neighbors_page",
+        "src.ui.pages.responders_page",
+        "src.ui.pages.settings_page",
+        "src.ui.pages.targets_page",
+        "src.ui.pages.template_page",
+        "src.ui.styles",
+        "src.ui.widgets",
+        "src.utils.errors",
+        "src.utils.logging_setup",
+        "threading"
+      ],
+      "string_constants": 382,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "menu_label",
+        "TopBar",
+        "TopBar.__init__",
+        "TopBar.resizeEvent",
+        "TopBar.fit_to_width",
+        "TopBar.fit_to_width.<locals>.needed",
+        "MainWindow",
+        "MainWindow.__init__",
+        "MainWindow._build_top_bar",
+        "MainWindow._fill_profile_combo",
+        "MainWindow.reload_profiles",
+        "MainWindow._refit_top_bar",
+        "MainWindow._update_top_bar",
+        "MainWindow._on_profile_changed",
+        "MainWindow.refresh_every_page",
+        "MainWindow._build_sidebar",
+        "MainWindow._build_sidebar.<locals>.<lambda>",
+        "MainWindow._build_sidebar.<locals>.<lambda>",
+        "MainWindow._build_sidebar.<locals>.<lambda>",
+        "MainWindow._show_more_menu",
+        "MainWindow._open_contact",
+        "MainWindow._build_pages",
+        "MainWindow._wrap_in_scroll",
+        "MainWindow._setup_shortcuts",
+        "MainWindow._setup_shortcuts.<locals>.add",
+        "MainWindow._setup_shortcuts.<locals>.<lambda>",
+        "MainWindow.go_to",
+        "MainWindow.show_login_dialog",
+        "MainWindow.show_account_dialog",
+        "MainWindow.logout",
+        "MainWindow.on_account_changed",
+        "MainWindow.require_feature",
+        "MainWindow._maybe_refresh_license",
+        "MainWindow._maybe_refresh_license.<locals>.work",
+        "MainWindow.open_extension_settings",
+        "MainWindow.current_page_name",
+        "MainWindow.refresh_all",
+        "MainWindow.set_status",
+        "MainWindow._build_job_strip",
+        "MainWindow.readiness",
+        "MainWindow.running_progress",
+        "MainWindow.refresh_job_strip",
+        "MainWindow.shortcut_new_target",
+        "MainWindow.shortcut_open_browser",
+        "MainWindow.shortcut_generate",
+        "MainWindow.shortcut_complete",
+        "MainWindow.shortcut_next",
+        "MainWindow.shortcut_export",
+        "MainWindow.show_help",
+        "MainWindow.import_excel_dialog",
+        "MainWindow.request_close_after_restore",
+        "MainWindow._stop_all_timers",
+        "MainWindow.closeEvent"
+      ]
+    },
+    {
+      "module": "src.ui.notice",
+      "code_objects": 9,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "src",
+        "src.ui.widgets",
+        "src.utils.logging_setup",
+        "threading",
+        "urllib.request"
+      ],
+      "string_constants": 70,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "fetch_remote_notice",
+        "NoticeDialog",
+        "NoticeDialog.__init__",
+        "_NoticeBridge",
+        "fetch_server_notice",
+        "show_startup_notice",
+        "show_startup_notice.<locals>.deliver",
+        "show_startup_notice.<locals>.worker"
+      ]
+    },
+    {
+      "module": "src.ui.notice_editor",
+      "code_objects": 19,
+      "imports": [
+        "PySide6.QtGui",
+        "PySide6.QtWidgets",
+        "__future__",
+        "re"
+      ],
+      "string_constants": 108,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "body_only",
+        "_small",
+        "NoticeEditor",
+        "NoticeEditor.__init__",
+        "NoticeEditor._build_toolbar",
+        "NoticeEditor.set_html",
+        "NoticeEditor.html",
+        "NoticeEditor.html_mode",
+        "NoticeEditor.set_html_mode",
+        "NoticeEditor._merge",
+        "NoticeEditor.toggle_bold",
+        "NoticeEditor.toggle_italic",
+        "NoticeEditor.toggle_underline",
+        "NoticeEditor.pick_color",
+        "NoticeEditor.apply_size",
+        "NoticeEditor.insert_link",
+        "NoticeEditor.insert_rule",
+        "NoticeEditor.insert_tier_table"
+      ]
+    },
+    {
+      "module": "src.ui.onestop_dialog",
+      "code_objects": 9,
+      "imports": [
+        "PySide6.QtWidgets",
+        "__future__",
+        "src.models.enums",
+        "src.services",
+        "src.ui.onestop_steps",
+        "src.ui.widgets",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 86,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "OneStopDialog",
+        "OneStopDialog.__init__",
+        "OneStopDialog.pending_count",
+        "OneStopDialog.target_limit",
+        "OneStopDialog.step_plan",
+        "OneStopDialog.refresh",
+        "OneStopDialog.open_targets",
+        "OneStopDialog.try_start"
+      ]
+    },
+    {
+      "module": "src.ui.onestop_steps",
+      "code_objects": 41,
+      "imports": [
+        "__future__",
+        "collections.abc",
+        "src.models.enums",
+        "src.services",
+        "src.services.browser_session",
+        "src.services.onestop_service",
+        "src.ui.widgets",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 95,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_interaction_running",
+        "_neighbor_running",
+        "_browser_running",
+        "_view_of",
+        "_summary_of",
+        "build_steps",
+        "plan_notes",
+        "_all_steps",
+        "_all_steps.<locals>.quiet",
+        "_all_steps.<locals>.mine",
+        "_all_steps.<locals>.mine.<locals>.run",
+        "_all_steps.<locals>.stop_interaction",
+        "_all_steps.<locals>.stop_neighbor",
+        "_all_steps.<locals>.stop_browser",
+        "_all_steps.<locals>.step_activity",
+        "_all_steps.<locals>.step_collect",
+        "_all_steps.<locals>.step_reply",
+        "_all_steps.<locals>.step_visit",
+        "_all_steps.<locals>.step_neighbors",
+        "_all_steps.<locals>.step_browser",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "_all_steps.<locals>.<lambda>",
+        "make_guard",
+        "make_guard.<locals>.guard"
+      ]
+    },
+    {
+      "module": "src.ui.pages",
+      "code_objects": 1,
+      "imports": [],
+      "string_constants": 0,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": []
+    },
+    {
+      "module": "src.ui.pages.admin_page",
+      "code_objects": 53,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "datetime",
+        "src",
+        "src.app_context",
+        "src.services.license_service",
+        "src.ui.notice",
+        "src.ui.notice_editor",
+        "src.ui.widgets",
+        "src.utils.errors",
+        "src.utils.logging_setup",
+        "typing"
+      ],
+      "string_constants": 354,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "AdminPage",
+        "AdminPage.__init__",
+        "AdminPage._build_notice_card",
+        "AdminPage.load_notice",
+        "AdminPage.load_notice.<locals>.action",
+        "AdminPage._show_notice_state",
+        "AdminPage.save_notice",
+        "AdminPage.save_notice.<locals>.action",
+        "AdminPage.preview_notice",
+        "AdminPage.preview_notice.<locals>.action",
+        "AdminPage._build_plan_card",
+        "AdminPage._build_user_card",
+        "AdminPage._build_user_card.<locals>.<lambda>",
+        "AdminPage._build_user_card.<locals>.<lambda>",
+        "AdminPage._build_user_card.<locals>.<lambda>",
+        "AdminPage._build_user_card.<locals>.<lambda>",
+        "AdminPage.refresh",
+        "AdminPage._run",
+        "AdminPage.load_plan_limits",
+        "AdminPage.load_plan_limits.<locals>.action",
+        "AdminPage.save_plan_limits",
+        "AdminPage.save_plan_limits.<locals>.action",
+        "AdminPage.show_all_users",
+        "AdminPage.load_users",
+        "AdminPage.load_users.<locals>.action",
+        "AdminPage._show_users",
+        "AdminPage._show_users.<locals>.<genexpr>",
+        "AdminPage._pick_user_from_table",
+        "AdminPage._open_user",
+        "AdminPage._open_user.<locals>.action",
+        "AdminPage.find_user",
+        "AdminPage.reload_user",
+        "AdminPage._show_user",
+        "AdminPage._expiry_text",
+        "AdminPage._selected_row",
+        "AdminPage._load_selected_license",
+        "AdminPage._require_user",
+        "AdminPage._expires_value",
+        "AdminPage.save_license",
+        "AdminPage.save_license.<locals>.action",
+        "AdminPage.delete_license",
+        "AdminPage.delete_license.<locals>.action",
+        "AdminPage.current_feature",
+        "AdminPage._show_override_for_feature",
+        "AdminPage.save_override",
+        "AdminPage.save_override.<locals>.<lambda>",
+        "AdminPage.clear_override",
+        "AdminPage.clear_override.<locals>.<lambda>",
+        "AdminPage.reset_usage",
+        "AdminPage.reset_usage.<locals>.<lambda>",
+        "AdminPage.release_device",
+        "AdminPage.release_device.<locals>.<lambda>"
+      ]
+    },
+    {
+      "module": "src.ui.pages.browser_page",
+      "code_objects": 45,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "src.app_context",
+        "src.models.enums",
+        "src.services",
+        "src.services.browser_session",
+        "src.services.license_service",
+        "src.ui.widgets",
+        "src.utils.errors",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 484,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "BrowserPage",
+        "BrowserPage.__init__",
+        "BrowserPage._build_account_card",
+        "BrowserPage._build_control_card",
+        "BrowserPage._build_control_card.<locals>.<lambda>",
+        "BrowserPage._build_auto_submit_row",
+        "BrowserPage._build_progress_card",
+        "BrowserPage._build_task_card",
+        "BrowserPage.refresh",
+        "BrowserPage.select_mode",
+        "BrowserPage.current_mode",
+        "BrowserPage._on_mode_combo_changed",
+        "BrowserPage._update_mode_hint",
+        "BrowserPage._update_account_view",
+        "BrowserPage.open_naver_login",
+        "BrowserPage.recheck_login",
+        "BrowserPage.clear_account",
+        "BrowserPage.stop_polling",
+        "BrowserPage.hideEvent",
+        "BrowserPage.showEvent",
+        "BrowserPage.refresh_state",
+        "BrowserPage._readiness",
+        "BrowserPage._update_connection_label",
+        "BrowserPage._on_auto_submit_changed",
+        "BrowserPage._update_auto_submit_state",
+        "BrowserPage.start_session",
+        "BrowserPage.stop_session",
+        "BrowserPage._update_stop_row",
+        "BrowserPage.open_buddy_manage",
+        "BrowserPage.continue_session",
+        "BrowserPage.toggle_pause",
+        "BrowserPage.skip",
+        "BrowserPage.retry",
+        "BrowserPage.next_target",
+        "BrowserPage.open_current",
+        "BrowserPage.fill_again",
+        "BrowserPage.confirm_completed",
+        "BrowserPage.mark_failed",
+        "BrowserPage.diagnose_page",
+        "BrowserPage._show_page_report",
+        "BrowserPage.check_connection",
+        "BrowserPage._on_message_edited",
+        "BrowserPage.apply_message",
+        "BrowserPage.regenerate_message"
+      ]
+    },
+    {
+      "module": "src.ui.pages.comment_page",
+      "code_objects": 13,
+      "imports": [
+        "PySide6.QtWidgets",
+        "__future__",
+        "src.app_context",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services.license_service",
+        "src.ui.pages.work_base",
+        "src.ui.widgets",
+        "src.utils.datetime_utils",
+        "src.utils.errors"
+      ],
+      "string_constants": 156,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "CommentPage",
+        "CommentPage.__init__",
+        "CommentPage._build_main_panel",
+        "CommentPage._build_main_panel.<locals>.<lambda>",
+        "CommentPage._build_main_panel.<locals>.<lambda>",
+        "CommentPage.load_target",
+        "CommentPage.comment_history_text",
+        "CommentPage._on_candidate_changed",
+        "CommentPage.generate_candidates",
+        "CommentPage.copy_comment",
+        "CommentPage.save_comment",
+        "CommentPage.complete_work"
+      ]
+    },
+    {
+      "module": "src.ui.pages.dashboard_page",
+      "code_objects": 9,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "src.app_context",
+        "src.models.enums",
+        "src.ui.widgets",
+        "src.utils.datetime_utils"
+      ],
+      "string_constants": 178,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "DashboardPage",
+        "DashboardPage.__init__",
+        "DashboardPage.__init__.<locals>.<lambda>",
+        "DashboardPage.__init__.<locals>.<lambda>",
+        "DashboardPage._refresh_account",
+        "DashboardPage._refresh_today",
+        "DashboardPage._refresh_people",
+        "DashboardPage.refresh"
+      ]
+    },
+    {
+      "module": "src.ui.pages.excel_page",
+      "code_objects": 17,
+      "imports": [
+        "PySide6.QtWidgets",
+        "__future__",
+        "os",
+        "pathlib",
+        "src",
+        "src.app_context",
+        "src.ui.dialogs",
+        "src.ui.widgets",
+        "src.utils.errors",
+        "subprocess",
+        "sys"
+      ],
+      "string_constants": 140,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "open_folder",
+        "ExcelPage",
+        "ExcelPage.__init__",
+        "ExcelPage.__init__.<locals>.<lambda>",
+        "ExcelPage.__init__.<locals>.<lambda>",
+        "ExcelPage.refresh",
+        "ExcelPage._open_folder",
+        "ExcelPage.export_excel",
+        "ExcelPage.quick_export",
+        "ExcelPage._do_export",
+        "ExcelPage.export_form",
+        "ExcelPage.import_excel",
+        "ExcelPage.check_excel",
+        "ExcelPage.create_backup",
+        "ExcelPage.manual_backup",
+        "ExcelPage.restore_backup"
+      ]
+    },
+    {
+      "module": "src.ui.pages.history_page",
+      "code_objects": 13,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "datetime",
+        "src.app_context",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.ui.widgets",
+        "src.utils.datetime_utils",
+        "src.utils.errors"
+      ],
+      "string_constants": 149,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "HistoryPage",
+        "HistoryPage.__init__",
+        "HistoryPage.__init__.<locals>.<lambda>",
+        "HistoryPage.refresh",
+        "HistoryPage._refresh_summary",
+        "HistoryPage._kind_text",
+        "HistoryPage._result_text",
+        "HistoryPage._selected_entries",
+        "HistoryPage._show_detail",
+        "HistoryPage.copy_detail",
+        "HistoryPage.open_selected",
+        "HistoryPage.delete_selected"
+      ]
+    },
+    {
+      "module": "src.ui.pages.home_page",
+      "code_objects": 36,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "collections.abc",
+        "functools",
+        "src.app_context",
+        "src.models.enums",
+        "src.services.browser_session",
+        "src.services.license_service",
+        "src.services.onestop_service",
+        "src.ui",
+        "src.ui.onestop_dialog",
+        "src.ui.onestop_steps",
+        "src.ui.widgets",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 307,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "ActionCard",
+        "ActionCard.__init__",
+        "ActionCard.set_state",
+        "HomePage",
+        "HomePage.__init__",
+        "HomePage._build_status_row",
+        "HomePage._build_status_row.<locals>.<lambda>",
+        "HomePage._build_onestop",
+        "HomePage._build_action_grid",
+        "HomePage._detail_handler",
+        "HomePage._detail_handler.<locals>.open_work",
+        "HomePage._build_job_card",
+        "HomePage._build_footer",
+        "HomePage._build_footer.<locals>.<lambda>",
+        "HomePage.refresh",
+        "HomePage.refresh_state",
+        "HomePage._apply_chips",
+        "HomePage._apply_cards",
+        "HomePage._apply_job",
+        "HomePage._maybe_chain",
+        "HomePage.start_find",
+        "HomePage._start_work",
+        "HomePage.start_neighbor_work",
+        "HomePage.start_comment_work",
+        "HomePage.start_neighbor_refresh",
+        "HomePage.start_responder_collect",
+        "HomePage.start_onestop",
+        "HomePage._set_onestop_busy",
+        "HomePage.stop_onestop",
+        "HomePage._tick_onestop",
+        "HomePage._apply_onestop",
+        "HomePage.stop_running",
+        "HomePage.stop_polling",
+        "HomePage.hideEvent",
+        "HomePage.showEvent"
+      ]
+    },
+    {
+      "module": "src.ui.pages.neighbor_page",
+      "code_objects": 11,
+      "imports": [
+        "PySide6.QtWidgets",
+        "__future__",
+        "src.app_context",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services.license_service",
+        "src.ui.pages.work_base",
+        "src.ui.widgets",
+        "src.utils.errors"
+      ],
+      "string_constants": 128,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "NeighborPage",
+        "NeighborPage.__init__",
+        "NeighborPage._build_main_panel",
+        "NeighborPage._build_main_panel.<locals>.<lambda>",
+        "NeighborPage._build_main_panel.<locals>.<lambda>",
+        "NeighborPage.load_target",
+        "NeighborPage.generate_phrase",
+        "NeighborPage.save_phrase",
+        "NeighborPage.copy_phrase",
+        "NeighborPage.complete_work"
+      ]
+    },
+    {
+      "module": "src.ui.pages.neighbors_page",
+      "code_objects": 47,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "datetime",
+        "src.app_context",
+        "src.models.enums",
+        "src.services",
+        "src.services.license_service",
+        "src.services.neighbor_service",
+        "src.ui.widgets",
+        "src.utils.errors"
+      ],
+      "string_constants": 389,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "NeighborsPage",
+        "NeighborsPage.__init__",
+        "NeighborsPage._build_control_card",
+        "NeighborsPage._build_control_card.<locals>.<lambda>",
+        "NeighborsPage._build_control_card.<locals>.<lambda>",
+        "NeighborsPage._build_interaction_row",
+        "NeighborsPage._build_interaction_row.<locals>.<lambda>",
+        "NeighborsPage._build_interaction_row.<locals>.<lambda>",
+        "NeighborsPage._build_stats_card",
+        "NeighborsPage._build_stats_card.<locals>.<lambda>",
+        "NeighborsPage._build_stats_card.<locals>.<lambda>",
+        "NeighborsPage._build_table_card",
+        "NeighborsPage._build_table_card.<locals>.<lambda>",
+        "NeighborsPage._build_table_card.<locals>.<lambda>",
+        "NeighborsPage._build_table_card.<locals>.<lambda>",
+        "NeighborsPage._build_table_card.<locals>.<lambda>",
+        "NeighborsPage._build_table_card.<locals>.<lambda>",
+        "NeighborsPage.refresh",
+        "NeighborsPage._fill_stats",
+        "NeighborsPage._current_rows",
+        "NeighborsPage._fill_table",
+        "NeighborsPage.refresh_progress",
+        "NeighborsPage._apply_readiness",
+        "NeighborsPage._readiness",
+        "NeighborsPage._readiness_hint",
+        "NeighborsPage._on_dormant_changed",
+        "NeighborsPage._on_unanswered_changed",
+        "NeighborsPage.start_collect",
+        "NeighborsPage.start_collect_current",
+        "NeighborsPage.start_activity_check",
+        "NeighborsPage.recheck_selected",
+        "NeighborsPage._refresh_interaction_progress",
+        "NeighborsPage._on_mode_changed",
+        "NeighborsPage._on_max_changed",
+        "NeighborsPage.start_interaction",
+        "NeighborsPage.stop_interaction",
+        "NeighborsPage.stop_job",
+        "NeighborsPage.selected_neighbors",
+        "NeighborsPage.select_by_filter",
+        "NeighborsPage.delete_selected",
+        "NeighborsPage.set_excluded",
+        "NeighborsPage.clear_all",
+        "NeighborsPage.open_selected",
+        "NeighborsPage.stop_polling",
+        "NeighborsPage.hideEvent",
+        "NeighborsPage.showEvent"
+      ]
+    },
+    {
+      "module": "src.ui.pages.responders_page",
+      "code_objects": 40,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "src.app_context",
+        "src.models.enums",
+        "src.services",
+        "src.services.interaction_session",
+        "src.services.license_service",
+        "src.services.responder_service",
+        "src.ui.widgets",
+        "src.utils.errors",
+        "typing"
+      ],
+      "string_constants": 383,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "RespondersPage",
+        "RespondersPage.__init__",
+        "RespondersPage._build_control_card",
+        "RespondersPage._build_comment_reply_row",
+        "RespondersPage._build_comment_reply_row.<locals>.<lambda>",
+        "RespondersPage._build_comment_reply_row.<locals>.<lambda>",
+        "RespondersPage._build_reply_row",
+        "RespondersPage._build_reply_row.<locals>.<lambda>",
+        "RespondersPage._build_reply_row.<locals>.<lambda>",
+        "RespondersPage._build_stats_card",
+        "RespondersPage._build_table_card",
+        "RespondersPage.refresh",
+        "RespondersPage._show_reaction_state",
+        "RespondersPage._fill_stats",
+        "RespondersPage._fill_table",
+        "RespondersPage.refresh_progress",
+        "RespondersPage._apply_readiness",
+        "RespondersPage._readiness",
+        "RespondersPage._readiness_hint",
+        "RespondersPage._show_comment_reply",
+        "RespondersPage._show_activity_progress",
+        "RespondersPage._continue_reply_after_check",
+        "RespondersPage._continue_reply_after_check.<locals>.<genexpr>",
+        "RespondersPage._on_post_count_changed",
+        "RespondersPage._on_mode_changed",
+        "RespondersPage._on_max_changed",
+        "RespondersPage._my_recent_posts",
+        "RespondersPage.collect_comment_authors",
+        "RespondersPage.probe_reaction_support",
+        "RespondersPage.start_reply",
+        "RespondersPage._begin_reply",
+        "RespondersPage.start_comment_reply",
+        "RespondersPage.stop_reply",
+        "RespondersPage.stop_job",
+        "RespondersPage.selected_responders",
+        "RespondersPage.open_selected",
+        "RespondersPage.stop_polling",
+        "RespondersPage.hideEvent",
+        "RespondersPage.showEvent"
+      ]
+    },
+    {
+      "module": "src.ui.pages.settings_page",
+      "code_objects": 38,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "pathlib",
+        "shutil",
+        "src",
+        "src.app_context",
+        "src.database.schema",
+        "src.models.enums",
+        "src.services",
+        "src.services.naver_api_service",
+        "src.services.supabase_check",
+        "src.ui.account_dialog",
+        "src.ui.pages.template_page",
+        "src.ui.settings_extension_mixin",
+        "src.ui.widgets",
+        "src.utils.datetime_utils",
+        "src.utils.errors"
+      ],
+      "string_constants": 463,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "SettingsPage",
+        "SettingsPage.__init__",
+        "SettingsPage.show_extension_section",
+        "SettingsPage.refresh",
+        "SettingsPage._show_profile_notice",
+        "SettingsPage._show_profile_list",
+        "SettingsPage.add_profile",
+        "SettingsPage.rename_profile",
+        "SettingsPage.change_preset",
+        "SettingsPage.delete_profile",
+        "SettingsPage.check_update",
+        "SettingsPage.send_feedback",
+        "SettingsPage.save_log",
+        "SettingsPage.reset_all_data",
+        "SettingsPage._refresh_auto_settings",
+        "SettingsPage._on_neighbor_repeat_toggled",
+        "SettingsPage._save_auto_settings",
+        "SettingsPage.save_settings",
+        "SettingsPage.reset_defaults",
+        "SettingsPage.preview_phrase",
+        "SettingsPage._toggle_secret",
+        "SettingsPage.update_api_status",
+        "SettingsPage.show_api_guide",
+        "SettingsPage.open_developer_center",
+        "SettingsPage.test_api",
+        "SettingsPage.clear_api_keys",
+        "SettingsPage.clear_phrase_log",
+        "SettingsPage._refresh_license_server",
+        "SettingsPage.check_license_server",
+        "SettingsPage.save_license_server",
+        "SettingsPage.clear_license_server",
+        "ProfileAddDialog",
+        "ProfileAddDialog.__init__",
+        "ProfileAddDialog.values",
+        "PresetChangeDialog",
+        "PresetChangeDialog.__init__",
+        "PresetChangeDialog.selected_preset"
+      ]
+    },
+    {
+      "module": "src.ui.pages.targets_page",
+      "code_objects": 34,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtGui",
+        "PySide6.QtWidgets",
+        "__future__",
+        "src.app_context",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.services.license_service",
+        "src.services.url_service",
+        "src.ui.dialogs",
+        "src.ui.search_dialog",
+        "src.ui.styles",
+        "src.ui.widgets",
+        "src.utils.errors",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 317,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_saved_ids",
+        "TargetsPage",
+        "TargetsPage.__init__",
+        "TargetsPage._build_register_card",
+        "TargetsPage._build_filter_card",
+        "TargetsPage._build_table",
+        "TargetsPage._build_action_row",
+        "TargetsPage._apply_compact_view",
+        "TargetsPage._sync_profile_categories",
+        "TargetsPage.refresh",
+        "TargetsPage.reset_filters",
+        "TargetsPage.selected_targets",
+        "TargetsPage._register_text",
+        "TargetsPage._register_text.<locals>.<genexpr>",
+        "TargetsPage._register_text.<locals>.<genexpr>",
+        "TargetsPage.add_single_url",
+        "TargetsPage.add_from_clipboard",
+        "TargetsPage.add_multiple",
+        "TargetsPage.update_search_hint",
+        "TargetsPage.open_api_search",
+        "TargetsPage.open_naver_search",
+        "TargetsPage.import_excel",
+        "TargetsPage._open_target_editor",
+        "TargetsPage.edit_selected",
+        "TargetsPage.open_selected",
+        "TargetsPage.start_browser_assist",
+        "TargetsPage.mark_already_neighbor",
+        "TargetsPage.mark_already_neighbor.<locals>.<genexpr>",
+        "TargetsPage.bulk_change_status",
+        "TargetsPage.delete_selected",
+        "TargetsPage.undo_delete",
+        "TargetsPage.restore_selected",
+        "TargetsPage.purge_selected"
+      ]
+    },
+    {
+      "module": "src.ui.pages.template_page",
+      "code_objects": 29,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "src.app_context",
+        "src.models.entities",
+        "src.models.enums",
+        "src.services",
+        "src.services.template_service",
+        "src.ui.widgets",
+        "src.utils.errors"
+      ],
+      "string_constants": 339,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "<genexpr>",
+        "variable_guide_for",
+        "TemplateEditDialog",
+        "TemplateEditDialog.__init__",
+        "TemplateEditDialog.__init__.<locals>.<lambda>",
+        "TemplateEditDialog._preview",
+        "TemplateEditDialog._save",
+        "FragmentEditDialog",
+        "FragmentEditDialog.__init__",
+        "FragmentEditDialog._save",
+        "TemplatePage",
+        "TemplatePage.__init__",
+        "TemplatePage._build_template_tab",
+        "TemplatePage._build_fragment_tab",
+        "TemplatePage.refresh",
+        "TemplatePage._selected_templates",
+        "TemplatePage._selected_template",
+        "TemplatePage._default_kind",
+        "TemplatePage.add_template",
+        "TemplatePage.edit_template",
+        "TemplatePage.toggle_template",
+        "TemplatePage.delete_template",
+        "TemplatePage.restore_defaults",
+        "TemplatePage._selected_fragments",
+        "TemplatePage._selected_fragment",
+        "TemplatePage.add_fragment",
+        "TemplatePage.edit_fragment",
+        "TemplatePage.delete_fragment"
+      ]
+    },
+    {
+      "module": "src.ui.pages.work_base",
+      "code_objects": 19,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "src.app_context",
+        "src.models.entities",
+        "src.services",
+        "src.ui.dialogs",
+        "src.ui.widgets",
+        "src.utils.datetime_utils",
+        "src.utils.errors",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 132,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "WorkPageBase",
+        "WorkPageBase.__init__",
+        "WorkPageBase._build_target_list",
+        "WorkPageBase._on_row_changed",
+        "WorkPageBase.refresh",
+        "WorkPageBase.select_target_by_id",
+        "WorkPageBase._require_target",
+        "WorkPageBase.open_blog",
+        "WorkPageBase.open_post",
+        "WorkPageBase.copy_text",
+        "WorkPageBase.edit_target_details",
+        "WorkPageBase.save_memo",
+        "WorkPageBase.skip_current",
+        "WorkPageBase.go_next",
+        "WorkPageBase.warn_if_duplicate_phrase",
+        "WorkPageBase._after_complete",
+        "WorkPageBase.history_text",
+        "WorkPageBase.load_target"
+      ]
+    },
+    {
+      "module": "src.ui.readiness",
+      "code_objects": 16,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "src.models.enums",
+        "src.services.license_service",
+        "src.utils.logging_setup",
+        "typing"
+      ],
+      "string_constants": 176,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "Readiness",
+        "Readiness.browser_ready",
+        "Readiness.feature_allowed",
+        "Readiness.feature_lock_reason",
+        "Readiness.status_text",
+        "Readiness.status_tone",
+        "job_status",
+        "_login_chip",
+        "_version_tuple",
+        "_version_tuple.<locals>.<genexpr>",
+        "extension_outdated",
+        "_ext_chip",
+        "_account_chip",
+        "_progress_views",
+        "compute"
+      ]
+    },
+    {
+      "module": "src.ui.search_dialog",
+      "code_objects": 26,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtGui",
+        "PySide6.QtWidgets",
+        "__future__",
+        "src.models.enums",
+        "src.services",
+        "src.services.naver_api_service",
+        "src.ui.widgets",
+        "src.utils.errors"
+      ],
+      "string_constants": 217,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "SearchDialog",
+        "SearchDialog.__init__",
+        "SearchDialog.__init__.<locals>.<lambda>",
+        "SearchDialog.__init__.<locals>.<lambda>",
+        "SearchDialog._build_filter_row",
+        "SearchDialog._load_filter_into_ui",
+        "SearchDialog._current_filter",
+        "SearchDialog._on_preset_changed",
+        "SearchDialog._save_filter",
+        "SearchDialog._apply_filter",
+        "SearchDialog._refilter_quietly",
+        "SearchDialog._filter_and_fill",
+        "SearchDialog._on_search_progress",
+        "SearchDialog.run_search",
+        "SearchDialog.run_search.<locals>.<genexpr>",
+        "SearchDialog._confirm_keyword_fits",
+        "SearchDialog.load_more",
+        "SearchDialog._fill_table",
+        "SearchDialog._on_item_changed",
+        "SearchDialog._update_selected_label",
+        "SearchDialog.checked_items",
+        "SearchDialog._check_all",
+        "SearchDialog._check_new_only",
+        "SearchDialog.open_selected",
+        "SearchDialog.register_selected"
+      ]
+    },
+    {
+      "module": "src.ui.settings_extension_mixin",
+      "code_objects": 10,
+      "imports": [
+        "PySide6.QtWidgets",
+        "__future__",
+        "pathlib",
+        "src",
+        "src.ui.pages.excel_page",
+        "src.ui.widgets",
+        "src.utils.errors",
+        "typing"
+      ],
+      "string_constants": 82,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "ExtensionSettingsMixin",
+        "ExtensionSettingsMixin.update_extension_status",
+        "ExtensionSettingsMixin.start_pairing",
+        "ExtensionSettingsMixin.test_extension",
+        "ExtensionSettingsMixin.renew_token",
+        "ExtensionSettingsMixin.disconnect_extension",
+        "ExtensionSettingsMixin.show_extension_guide",
+        "ExtensionSettingsMixin.extension_dir",
+        "ExtensionSettingsMixin.open_extension_folder"
+      ]
+    },
+    {
+      "module": "src.ui.setup_wizard",
+      "code_objects": 33,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtWidgets",
+        "__future__",
+        "src",
+        "src.app_context",
+        "src.services",
+        "src.services.naver_api_service",
+        "src.ui.pages.excel_page",
+        "src.ui.settings_extension_mixin",
+        "src.ui.widgets",
+        "src.utils.errors",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 222,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_hint",
+        "WelcomePage",
+        "WelcomePage.__init__",
+        "BlogInfoPage",
+        "BlogInfoPage.__init__",
+        "BlogInfoPage.selected_preset",
+        "ApiPage",
+        "ApiPage.__init__",
+        "ApiPage.initializePage",
+        "ApiPage._show_guide",
+        "ApiPage._open_console",
+        "ApiPage._test_api",
+        "ApiPage.save_credentials",
+        "ExtensionPage",
+        "ExtensionPage.__init__",
+        "ExtensionPage.initializePage",
+        "ExtensionPage.cleanupPage",
+        "ExtensionPage.validatePage",
+        "ExtensionPage._summary",
+        "ExtensionPage.is_connected",
+        "ExtensionPage.refresh_status",
+        "ExtensionPage._open_folder",
+        "ExtensionPage._show_guide",
+        "ExtensionPage._start_pairing",
+        "FinishPage",
+        "FinishPage.__init__",
+        "FinishPage.initializePage",
+        "SetupWizard",
+        "SetupWizard.__init__",
+        "SetupWizard.accept",
+        "SetupWizard.url_edit_text",
+        "run_setup_if_needed"
+      ]
+    },
+    {
+      "module": "src.ui.styles",
+      "code_objects": 3,
+      "imports": [
+        "PySide6.QtGui",
+        "__future__"
+      ],
+      "string_constants": 65,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "light_palette",
+        "apply_theme"
+      ]
+    },
+    {
+      "module": "src.ui.widgets",
+      "code_objects": 48,
+      "imports": [
+        "PySide6.QtCore",
+        "PySide6.QtGui",
+        "PySide6.QtWidgets",
+        "__future__",
+        "collections.abc",
+        "contextlib",
+        "src.services",
+        "src.utils.errors",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 443,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "auto_answer",
+        "auto_answering",
+        "show_info",
+        "show_warning",
+        "show_error",
+        "confirm",
+        "Card",
+        "Card.__init__",
+        "Disclosure",
+        "Disclosure.__init__",
+        "Disclosure._on_toggled",
+        "Disclosure.set_expanded",
+        "Disclosure.is_expanded",
+        "StatusChip",
+        "StatusChip.__init__",
+        "StatusChip.set_state",
+        "StatusChip.text",
+        "StatusChip.mousePressEvent",
+        "StatCard",
+        "StatCard.__init__",
+        "StatCard.set_value",
+        "StatCard.set_color",
+        "DownloadProgressPanel",
+        "DownloadProgressPanel.__init__",
+        "DownloadProgressPanel._eta_text",
+        "DownloadProgressPanel._speed_text",
+        "DownloadProgressPanel._render_recent",
+        "DownloadProgressPanel._render_view",
+        "DownloadProgressPanel.update_from",
+        "progress_visible",
+        "_escape",
+        "PageHeader",
+        "PageHeader.__init__",
+        "SectionTitle",
+        "SectionTitle.__init__",
+        "make_button",
+        "PhraseTextEdit",
+        "PhraseTextEdit.keyPressEvent",
+        "DuplicateChoiceDialog",
+        "DuplicateChoiceDialog.__init__",
+        "DuplicateChoiceDialog.__init__.<locals>.<lambda>",
+        "DuplicateChoiceDialog.__init__.<locals>.<lambda>",
+        "DuplicateChoiceDialog.__init__.<locals>.<lambda>",
+        "DuplicateChoiceDialog._choose",
+        "TextViewDialog",
+        "TextViewDialog.__init__",
+        "fill_category_combo"
+      ]
+    },
+    {
+      "module": "src.utils",
+      "code_objects": 1,
+      "imports": [],
+      "string_constants": 0,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": []
+    },
+    {
+      "module": "src.utils.datetime_utils",
+      "code_objects": 6,
+      "imports": [
+        "__future__",
+        "datetime"
+      ],
+      "string_constants": 22,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "now_str",
+        "today_str",
+        "parse_datetime",
+        "format_datetime",
+        "is_today"
+      ]
+    },
+    {
+      "module": "src.utils.env_loader",
+      "code_objects": 8,
+      "imports": [
+        "__future__",
+        "os",
+        "pathlib",
+        "re",
+        "src",
+        "src.utils.logging_setup"
+      ],
+      "string_constants": 62,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_parse_env_file",
+        "env_file_path",
+        "collect_env_values",
+        "find_supabase_config",
+        "find_naver_credentials",
+        "find_naver_credentials.<locals>.secret_for",
+        "describe_source"
+      ]
+    },
+    {
+      "module": "src.utils.errors",
+      "code_objects": 10,
+      "imports": [
+        "__future__"
+      ],
+      "string_constants": 34,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "AppError",
+        "AppError.__init__",
+        "AppError.__str__",
+        "InvalidUrlError",
+        "DuplicateTargetError",
+        "ExcelFileLockedError",
+        "ExcelFormatError",
+        "DatabaseError",
+        "TemplateError"
+      ]
+    },
+    {
+      "module": "src.utils.korean",
+      "code_objects": 12,
+      "imports": [
+        "__future__",
+        "re"
+      ],
+      "string_constants": 88,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_last_meaningful_char",
+        "has_final_consonant",
+        "final_jongseong_index",
+        "_ends_with_rieul",
+        "apply_josa",
+        "apply_josa.<locals>.replace_pair",
+        "apply_josa.<locals>.replace_ieyo",
+        "apply_josa.<locals>.replace_eu",
+        "apply_josa.<locals>.replace_i",
+        "split_sentences",
+        "tidy_spacing"
+      ]
+    },
+    {
+      "module": "src.utils.logging_setup",
+      "code_objects": 6,
+      "imports": [
+        "__future__",
+        "logging",
+        "logging.handlers",
+        "pathlib",
+        "re",
+        "src",
+        "sys"
+      ],
+      "string_constants": 32,
+      "sql_constants": 0,
+      "tables": [],
+      "symbols": [
+        "_SensitiveFilter",
+        "_SensitiveFilter.filter",
+        "_SensitiveFilter.filter.<locals>.<lambda>",
+        "setup_logging",
+        "get_logger"
+      ]
+    }
+  ],
+  "database_tables": {
+    "responders": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "account_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "profile",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_name",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "reaction_type",
+          "type": "TEXT"
+        },
+        {
+          "name": "comment_count",
+          "type": "INTEGER"
+        },
+        {
+          "name": "like_count",
+          "type": "INTEGER"
+        },
+        {
+          "name": "last_reacted_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "my_post_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "my_post_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "my_post_title",
+          "type": "TEXT"
+        },
+        {
+          "name": "latest_post_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "latest_post_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "latest_post_title",
+          "type": "TEXT"
+        },
+        {
+          "name": "latest_post_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "activity_status",
+          "type": "TEXT"
+        },
+        {
+          "name": "activity_checked_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "reply_status",
+          "type": "TEXT"
+        },
+        {
+          "name": "replied_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "last_error",
+          "type": "TEXT"
+        },
+        {
+          "name": "collected_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "updated_at",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    },
+    "reaction_events": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "account_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "my_post_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "my_post_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "my_post_title",
+          "type": "TEXT"
+        },
+        {
+          "name": "reaction_type",
+          "type": "TEXT"
+        },
+        {
+          "name": "reacted_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "collected_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "reply_comment_at",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    },
+    "neighbors": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "account_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "profile",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_name",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "relationship",
+          "type": "TEXT"
+        },
+        {
+          "name": "relationship_text",
+          "type": "TEXT"
+        },
+        {
+          "name": "relationship_checked_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "latest_post_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "latest_post_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "latest_post_title",
+          "type": "TEXT"
+        },
+        {
+          "name": "latest_post_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "activity_status",
+          "type": "TEXT"
+        },
+        {
+          "name": "activity_checked_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "neighbor_requested_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "last_error",
+          "type": "TEXT"
+        },
+        {
+          "name": "memo",
+          "type": "TEXT"
+        },
+        {
+          "name": "excluded",
+          "type": "INTEGER"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "updated_at",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    },
+    "my_posts": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "account_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "post_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "post_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "post_title",
+          "type": "TEXT"
+        },
+        {
+          "name": "comment_count",
+          "type": "INTEGER"
+        },
+        {
+          "name": "checked_at",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    },
+    "account": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_name",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "profile_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "login_state",
+          "type": "TEXT"
+        },
+        {
+          "name": "checked_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    },
+    "profiles": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT"
+        },
+        {
+          "name": "name",
+          "type": "TEXT"
+        },
+        {
+          "name": "nickname",
+          "type": "TEXT"
+        },
+        {
+          "name": "topic",
+          "type": "TEXT"
+        },
+        {
+          "name": "preset",
+          "type": "TEXT"
+        },
+        {
+          "name": "sort_order",
+          "type": "INTEGER"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    },
+    "targets": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "profile",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_name",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "post_title",
+          "type": "TEXT"
+        },
+        {
+          "name": "post_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "post_no",
+          "type": "TEXT"
+        },
+        {
+          "name": "keyword",
+          "type": "TEXT"
+        },
+        {
+          "name": "category",
+          "type": "TEXT"
+        },
+        {
+          "name": "post_summary",
+          "type": "TEXT"
+        },
+        {
+          "name": "impressive_point",
+          "type": "TEXT"
+        },
+        {
+          "name": "work_type",
+          "type": "TEXT"
+        },
+        {
+          "name": "status",
+          "type": "TEXT"
+        },
+        {
+          "name": "generated_text",
+          "type": "TEXT"
+        },
+        {
+          "name": "generated_neighbor_text",
+          "type": "TEXT"
+        },
+        {
+          "name": "generated_comment_text",
+          "type": "TEXT"
+        },
+        {
+          "name": "memo",
+          "type": "TEXT"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "updated_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "last_worked_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "deleted",
+          "type": "INTEGER"
+        },
+        {
+          "name": "duplicate_flag",
+          "type": "INTEGER"
+        },
+        {
+          "name": "last_outcome",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    },
+    "history": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "profile",
+          "type": "TEXT"
+        },
+        {
+          "name": "target_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "blog_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_name",
+          "type": "TEXT"
+        },
+        {
+          "name": "post_title",
+          "type": "TEXT"
+        },
+        {
+          "name": "post_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "work_type",
+          "type": "TEXT"
+        },
+        {
+          "name": "action",
+          "type": "TEXT"
+        },
+        {
+          "name": "status",
+          "type": "TEXT"
+        },
+        {
+          "name": "text_used",
+          "type": "TEXT"
+        },
+        {
+          "name": "memo",
+          "type": "TEXT"
+        },
+        {
+          "name": "worked_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "task_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "outcome",
+          "type": "TEXT"
+        },
+        {
+          "name": "detect_method",
+          "type": "TEXT"
+        },
+        {
+          "name": "account_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "action_type",
+          "type": "TEXT"
+        },
+        {
+          "name": "source",
+          "type": "TEXT"
+        },
+        {
+          "name": "action_status",
+          "type": "TEXT"
+        },
+        {
+          "name": "post_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "error_code",
+          "type": "TEXT"
+        },
+        {
+          "name": "error_message",
+          "type": "TEXT"
+        },
+        {
+          "name": "completed_at",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    },
+    "templates": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "profile",
+          "type": "TEXT"
+        },
+        {
+          "name": "kind",
+          "type": "TEXT"
+        },
+        {
+          "name": "category",
+          "type": "TEXT"
+        },
+        {
+          "name": "tone",
+          "type": "TEXT"
+        },
+        {
+          "name": "title",
+          "type": "TEXT"
+        },
+        {
+          "name": "body",
+          "type": "TEXT"
+        },
+        {
+          "name": "enabled",
+          "type": "INTEGER"
+        },
+        {
+          "name": "builtin",
+          "type": "INTEGER"
+        },
+        {
+          "name": "edited",
+          "type": "INTEGER"
+        },
+        {
+          "name": "use_count",
+          "type": "INTEGER"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "updated_at",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    },
+    "fragments": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "profile",
+          "type": "TEXT"
+        },
+        {
+          "name": "kind",
+          "type": "TEXT"
+        },
+        {
+          "name": "part",
+          "type": "TEXT"
+        },
+        {
+          "name": "category",
+          "type": "TEXT"
+        },
+        {
+          "name": "tone",
+          "type": "TEXT"
+        },
+        {
+          "name": "text",
+          "type": "TEXT"
+        },
+        {
+          "name": "enabled",
+          "type": "INTEGER"
+        },
+        {
+          "name": "builtin",
+          "type": "INTEGER"
+        },
+        {
+          "name": "edited",
+          "type": "INTEGER"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "updated_at",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    },
+    "settings": {
+      "columns": [
+        {
+          "name": "key",
+          "type": "TEXT"
+        },
+        {
+          "name": "value",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    },
+    "phrase_log": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "profile",
+          "type": "TEXT"
+        },
+        {
+          "name": "kind",
+          "type": "TEXT"
+        },
+        {
+          "name": "blog_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "text_hash",
+          "type": "TEXT"
+        },
+        {
+          "name": "text",
+          "type": "TEXT"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    },
+    "meta": {
+      "columns": [
+        {
+          "name": "key",
+          "type": "TEXT"
+        },
+        {
+          "name": "value",
+          "type": "TEXT"
+        }
+      ],
+      "evidence_module": "src.database.schema"
+    }
+  },
+  "web_files": [
+    {
+      "path": "이웃부스터_v1.0.1/extension/background.js",
+      "bytes": 65035,
+      "sha256": "0214907c6c2f5e74945d4438536c1e515f4ad100934aa613ffcf2ba998d31f7a",
+      "functions": [
+        {
+          "value": "getConfig",
+          "line": 37
+        },
+        {
+          "value": "saveConfig",
+          "line": 42
+        },
+        {
+          "value": "baseUrl",
+          "line": 46
+        },
+        {
+          "value": "callApi",
+          "line": 53
+        },
+        {
+          "value": "discoverPort",
+          "line": 73
+        },
+        {
+          "value": "pair",
+          "line": 91
+        },
+        {
+          "value": "unpair",
+          "line": 108
+        },
+        {
+          "value": "ensureTab",
+          "line": 117
+        },
+        {
+          "value": "isManagedTab",
+          "line": 134
+        },
+        {
+          "value": "activeTabId",
+          "line": 140
+        },
+        {
+          "value": "sendToTab",
+          "line": 144
+        },
+        {
+          "value": "closeDialogTab",
+          "line": 155
+        },
+        {
+          "value": "reportStatus",
+          "line": 169
+        },
+        {
+          "value": "reportResult",
+          "line": 173
+        },
+        {
+          "value": "poll",
+          "line": 185
+        },
+        {
+          "value": "tabUrl",
+          "line": 273
+        },
+        {
+          "value": "waitForLanding",
+          "line": 289
+        },
+        {
+          "value": "isLoginPageUrl",
+          "line": 300
+        },
+        {
+          "value": "blogIdFromUrl",
+          "line": 309
+        },
+        {
+          "value": "askTopFrame",
+          "line": 334
+        },
+        {
+          "value": "waitForTabLoad",
+          "line": 342
+        },
+        {
+          "value": "handleAccountCheck",
+          "line": 377
+        },
+        {
+          "value": "busyStuck",
+          "line": 488
+        },
+        {
+          "value": "fetchAiText",
+          "line": 525
+        },
+        {
+          "value": "executeAllFrames",
+          "line": 548
+        },
+        {
+          "value": "readAllFrames",
+          "line": 584
+        },
+        {
+          "value": "pickNeighborReport",
+          "line": 596
+        },
+        {
+          "value": "pickLatestPost",
+          "line": 608
+        },
+        {
+          "value": "pickCommentAuthors",
+          "line": 619
+        },
+        {
+          "value": "pickReactionProbe",
+          "line": 630
+        },
+        {
+          "value": "readFramesUntil",
+          "line": 642
+        },
+        {
+          "value": "pickRecentPosts",
+          "line": 652
+        },
+        {
+          "value": "currentNaverTab",
+          "line": 663
+        },
+        {
+          "value": "findInteractionFrame",
+          "line": 684
+        },
+        {
+          "value": "askTab",
+          "line": 714
+        },
+        {
+          "value": "fillUrl",
+          "line": 723
+        },
+        {
+          "value": "handleNeighborJob",
+          "line": 735
+        },
+        {
+          "value": "collectNeighborPage",
+          "line": 757
+        },
+        {
+          "value": "collectFromCurrentTab",
+          "line": 831
+        },
+        {
+          "value": "checkOneNeighbor",
+          "line": 907
+        },
+        {
+          "value": "handleInteractionJob",
+          "line": 956
+        },
+        {
+          "value": "logNoFromUrl",
+          "line": 983
+        },
+        {
+          "value": "pageMatches",
+          "line": 997
+        },
+        {
+          "value": "mobilePostUrl",
+          "line": 1009
+        },
+        {
+          "value": "waitForInteractionFrame",
+          "line": 1022
+        },
+        {
+          "value": "runOneInteraction",
+          "line": 1032
+        },
+        {
+          "value": "findReplyFrame",
+          "line": 1171
+        },
+        {
+          "value": "replyToComment",
+          "line": 1187
+        },
+        {
+          "value": "nextListUrl",
+          "line": 1313
+        },
+        {
+          "value": "goToNextPostListPage",
+          "line": 1329
+        },
+        {
+          "value": "listMyPosts",
+          "line": 1348
+        },
+        {
+          "value": "commentPageUrl",
+          "line": 1411
+        },
+        {
+          "value": "collectResponders",
+          "line": 1419
+        },
+        {
+          "value": "probeReactionSupport",
+          "line": 1475
+        },
+        {
+          "value": "clearNotFoundTimer",
+          "line": 1512
+        },
+        {
+          "value": "markFrameFound",
+          "line": 1520
+        },
+        {
+          "value": "scheduleNotFound",
+          "line": 1526
+        }
+      ],
+      "bridge_paths": [
+        {
+          "value": "/api/ping",
+          "line": 81
+        },
+        {
+          "value": "/api/pair",
+          "line": 96
+        },
+        {
+          "value": "/api/status",
+          "line": 170
+        },
+        {
+          "value": "/api/result",
+          "line": 174
+        },
+        {
+          "value": "/api/poll",
+          "line": 193
+        },
+        {
+          "value": "/api/account",
+          "line": 397
+        },
+        {
+          "value": "/api/account",
+          "line": 403
+        },
+        {
+          "value": "/api/account",
+          "line": 430
+        },
+        {
+          "value": "/api/account",
+          "line": 439
+        },
+        {
+          "value": "/api/account",
+          "line": 452
+        },
+        {
+          "value": "/api/account",
+          "line": 460
+        },
+        {
+          "value": "/api/account",
+          "line": 469
+        },
+        {
+          "value": "/api/ai_text",
+          "line": 538
+        },
+        {
+          "value": "/api/neighbors",
+          "line": 761
+        },
+        {
+          "value": "/api/neighbors",
+          "line": 796
+        },
+        {
+          "value": "/api/neighbors",
+          "line": 803
+        },
+        {
+          "value": "/api/neighbors",
+          "line": 816
+        },
+        {
+          "value": "/api/neighbors",
+          "line": 840
+        },
+        {
+          "value": "/api/neighbors",
+          "line": 857
+        },
+        {
+          "value": "/api/neighbors",
+          "line": 877
+        },
+        {
+          "value": "/api/neighbors",
+          "line": 884
+        },
+        {
+          "value": "/api/neighbors",
+          "line": 891
+        },
+        {
+          "value": "/api/neighbor_activity",
+          "line": 926
+        },
+        {
+          "value": "/api/neighbor_activity",
+          "line": 937
+        },
+        {
+          "value": "/api/interaction",
+          "line": 1036
+        },
+        {
+          "value": "/api/interaction",
+          "line": 1121
+        },
+        {
+          "value": "/api/interaction",
+          "line": 1153
+        },
+        {
+          "value": "/api/interaction",
+          "line": 1155
+        },
+        {
+          "value": "/api/comment_reply",
+          "line": 1192
+        },
+        {
+          "value": "/api/comment_reply",
+          "line": 1262
+        },
+        {
+          "value": "/api/comment_reply",
+          "line": 1293
+        },
+        {
+          "value": "/api/comment_reply",
+          "line": 1295
+        },
+        {
+          "value": "/api/my_posts",
+          "line": 1352
+        },
+        {
+          "value": "/api/my_posts",
+          "line": 1390
+        },
+        {
+          "value": "/api/my_posts",
+          "line": 1394
+        },
+        {
+          "value": "/api/my_posts",
+          "line": 1401
+        },
+        {
+          "value": "/api/my_posts",
+          "line": 1403
+        },
+        {
+          "value": "/api/responders",
+          "line": 1422
+        },
+        {
+          "value": "/api/responders",
+          "line": 1455
+        },
+        {
+          "value": "/api/responders",
+          "line": 1462
+        },
+        {
+          "value": "/api/responders",
+          "line": 1467
+        },
+        {
+          "value": "/api/reaction_probe",
+          "line": 1478
+        },
+        {
+          "value": "/api/reaction_probe",
+          "line": 1494
+        },
+        {
+          "value": "/api/reaction_probe",
+          "line": 1502
+        },
+        {
+          "value": "/api/poll",
+          "line": 1562
+        },
+        {
+          "value": "/api/poll",
+          "line": 1576
+        },
+        {
+          "value": "/api/message",
+          "line": 1580
+        },
+        {
+          "value": "/api/message",
+          "line": 1588
+        },
+        {
+          "value": "/api/poll",
+          "line": 1613
+        },
+        {
+          "value": "/api/diagnose",
+          "line": 1641
+        },
+        {
+          "value": "/api/diagnose",
+          "line": 1648
+        },
+        {
+          "value": "/api/like",
+          "line": 1694
+        },
+        {
+          "value": "/api/message",
+          "line": 1703
+        }
+      ],
+      "message_types": [],
+      "discovery": "regex hints; not an exhaustive JavaScript parser or call graph"
+    },
+    {
+      "path": "이웃부스터_v1.0.1/extension/content.js",
+      "bytes": 110017,
+      "sha256": "d7ac45340c748b971e3d950e1b7972f4b49317b36d2476fd33e85c8b9b3ae8ad",
+      "functions": [
+        {
+          "value": "send",
+          "line": 47
+        },
+        {
+          "value": "reportStatus",
+          "line": 57
+        },
+        {
+          "value": "reportOutcome",
+          "line": 61
+        },
+        {
+          "value": "setNativeValue",
+          "line": 77
+        },
+        {
+          "value": "fillMessage",
+          "line": 90
+        },
+        {
+          "value": "detectNeighborBlockingState",
+          "line": 130
+        },
+        {
+          "value": "temporaryCommentState",
+          "line": 166
+        },
+        {
+          "value": "detectCommentBlockingState",
+          "line": 177
+        },
+        {
+          "value": "selectMutualOption",
+          "line": 204
+        },
+        {
+          "value": "clickNext",
+          "line": 242
+        },
+        {
+          "value": "describePage",
+          "line": 259
+        },
+        {
+          "value": "onBuddyAddPage",
+          "line": 368
+        },
+        {
+          "value": "runNeighbor",
+          "line": 372
+        },
+        {
+          "value": "onCommentPage",
+          "line": 542
+        },
+        {
+          "value": "commentBoxOrBlocked",
+          "line": 551
+        },
+        {
+          "value": "stopIfBlocked",
+          "line": 565
+        },
+        {
+          "value": "myCommentRow",
+          "line": 578
+        },
+        {
+          "value": "withTimeout",
+          "line": 590
+        },
+        {
+          "value": "likeBeforeComment",
+          "line": 604
+        },
+        {
+          "value": "runComment",
+          "line": 650
+        },
+        {
+          "value": "submitSpecFor",
+          "line": 801
+        },
+        {
+          "value": "submitLabelFor",
+          "line": 808
+        },
+        {
+          "value": "attachSubmitWatcher",
+          "line": 812
+        },
+        {
+          "value": "askOrWait",
+          "line": 846
+        },
+        {
+          "value": "handOverToUser",
+          "line": 863
+        },
+        {
+          "value": "autoSubmit",
+          "line": 868
+        },
+        {
+          "value": "watchCompletion",
+          "line": 934
+        },
+        {
+          "value": "highlight",
+          "line": 1085
+        },
+        {
+          "value": "buildPanel",
+          "line": 1099
+        },
+        {
+          "value": "updatePanel",
+          "line": 1151
+        },
+        {
+          "value": "startTask",
+          "line": 1172
+        },
+        {
+          "value": "inspectAccount",
+          "line": 1222
+        },
+        {
+          "value": "firstMatch",
+          "line": 1281
+        },
+        {
+          "value": "allMatches",
+          "line": 1294
+        },
+        {
+          "value": "readNeighborList",
+          "line": 1308
+        },
+        {
+          "value": "logNoOf",
+          "line": 1394
+        },
+        {
+          "value": "absoluteUrl",
+          "line": 1403
+        },
+        {
+          "value": "belongsToBlog",
+          "line": 1415
+        },
+        {
+          "value": "noCommentsLabel",
+          "line": 1427
+        },
+        {
+          "value": "openCommentArea",
+          "line": 1438
+        },
+        {
+          "value": "readRecentPosts",
+          "line": 1464
+        },
+        {
+          "value": "clickPostListNext",
+          "line": 1553
+        },
+        {
+          "value": "clickNextPage",
+          "line": 1565
+        },
+        {
+          "value": "readPostText",
+          "line": 1578
+        },
+        {
+          "value": "readLatestPost",
+          "line": 1608
+        },
+        {
+          "value": "currentPostNo",
+          "line": 1669
+        },
+        {
+          "value": "insideOtherPostLink",
+          "line": 1675
+        },
+        {
+          "value": "clickTargetOf",
+          "line": 1690
+        },
+        {
+          "value": "classOf",
+          "line": 1699
+        },
+        {
+          "value": "inReactionList",
+          "line": 1708
+        },
+        {
+          "value": "isClickable",
+          "line": 1716
+        },
+        {
+          "value": "likeModuleOf",
+          "line": 1722
+        },
+        {
+          "value": "likeCandidates",
+          "line": 1748
+        },
+        {
+          "value": "visibleLikeButton",
+          "line": 1785
+        },
+        {
+          "value": "openReactionItems",
+          "line": 1791
+        },
+        {
+          "value": "likeSnapshot",
+          "line": 1802
+        },
+        {
+          "value": "hasColourFill",
+          "line": 1862
+        },
+        {
+          "value": "likeStateOf",
+          "line": 1869
+        },
+        {
+          "value": "likeState",
+          "line": 1884
+        },
+        {
+          "value": "onlyLegacy",
+          "line": 1889
+        },
+        {
+          "value": "revealLikeRow",
+          "line": 1898
+        },
+        {
+          "value": "pickLikeReaction",
+          "line": 1914
+        },
+        {
+          "value": "likeRequestsSince",
+          "line": 1930
+        },
+        {
+          "value": "describeButton",
+          "line": 1950
+        },
+        {
+          "value": "describeArea",
+          "line": 1963
+        },
+        {
+          "value": "doLike",
+          "line": 1975
+        },
+        {
+          "value": "doComment",
+          "line": 2063
+        },
+        {
+          "value": "waitForCommentBox",
+          "line": 2155
+        },
+        {
+          "value": "canInteract",
+          "line": 2182
+        },
+        {
+          "value": "runInteraction",
+          "line": 2204
+        },
+        {
+          "value": "readCommentAuthors",
+          "line": 2299
+        },
+        {
+          "value": "hasMyReplyUnder",
+          "line": 2371
+        },
+        {
+          "value": "isReplyRow",
+          "line": 2390
+        },
+        {
+          "value": "commentRowOf",
+          "line": 2401
+        },
+        {
+          "value": "readCommentOf",
+          "line": 2420
+        },
+        {
+          "value": "canReplyTo",
+          "line": 2440
+        },
+        {
+          "value": "replyToComment",
+          "line": 2462
+        },
+        {
+          "value": "probeReactionUsers",
+          "line": 2581
+        }
+      ],
+      "bridge_paths": [],
+      "message_types": [],
+      "discovery": "regex hints; not an exhaustive JavaScript parser or call graph"
+    },
+    {
+      "path": "이웃부스터_v1.0.1/extension/finder.js",
+      "bytes": 18672,
+      "sha256": "2a2197d7f304665aa2578dbfc15092dabe73341ba6005481eec506641fe47780",
+      "functions": [
+        {
+          "value": "isVisible",
+          "line": 14
+        },
+        {
+          "value": "textOf",
+          "line": 23
+        },
+        {
+          "value": "pageHasText",
+          "line": 35
+        },
+        {
+          "value": "findByCss",
+          "line": 46
+        },
+        {
+          "value": "isClickableTag",
+          "line": 65
+        },
+        {
+          "value": "findByText",
+          "line": 81
+        },
+        {
+          "value": "isEditable",
+          "line": 116
+        },
+        {
+          "value": "hasAnyChoice",
+          "line": 131
+        },
+        {
+          "value": "hasAnyEditable",
+          "line": 138
+        },
+        {
+          "value": "findInput",
+          "line": 145
+        },
+        {
+          "value": "waitFor",
+          "line": 188
+        },
+        {
+          "value": "dialogMessage",
+          "line": 233
+        },
+        {
+          "value": "clearDialogMessage",
+          "line": 241
+        },
+        {
+          "value": "noticeHasText",
+          "line": 249
+        },
+        {
+          "value": "inDialog",
+          "line": 281
+        },
+        {
+          "value": "isFinalSubmit",
+          "line": 298
+        },
+        {
+          "value": "tapTargetOf",
+          "line": 315
+        },
+        {
+          "value": "tap",
+          "line": 341
+        },
+        {
+          "value": "safeClick",
+          "line": 374
+        }
+      ],
+      "bridge_paths": [],
+      "message_types": [],
+      "discovery": "regex hints; not an exhaustive JavaScript parser or call graph"
+    },
+    {
+      "path": "이웃부스터_v1.0.1/extension/manifest.json",
+      "bytes": 1376,
+      "sha256": "ade3b6fe7ea8516c116f8ba1bf14ecba8501231ad36f09272d824ec85c5b096c",
+      "functions": [],
+      "bridge_paths": [],
+      "message_types": [],
+      "discovery": "regex hints; not an exhaustive JavaScript parser or call graph"
+    },
+    {
+      "path": "이웃부스터_v1.0.1/extension/pagehook.js",
+      "bytes": 1597,
+      "sha256": "d3eacd10664d42cab75bbe1ef235978a159ef2493087702ed2b2b9b35956a77b",
+      "functions": [
+        {
+          "value": "record",
+          "line": 18
+        }
+      ],
+      "bridge_paths": [],
+      "message_types": [],
+      "discovery": "regex hints; not an exhaustive JavaScript parser or call graph"
+    },
+    {
+      "path": "이웃부스터_v1.0.1/extension/panel.css",
+      "bytes": 2355,
+      "sha256": "6a36b2423aa8eb25d65b22fb89420b57a8655555a5e8e75b6ac54a0e4020b123",
+      "functions": [],
+      "bridge_paths": [],
+      "message_types": [],
+      "discovery": "regex hints; not an exhaustive JavaScript parser or call graph"
+    },
+    {
+      "path": "이웃부스터_v1.0.1/extension/popup.css",
+      "bytes": 2041,
+      "sha256": "f81925ce7e0061035e690c4c257de10b7acf05dcaf95f567636926d7eee79051",
+      "functions": [],
+      "bridge_paths": [],
+      "message_types": [],
+      "discovery": "regex hints; not an exhaustive JavaScript parser or call graph"
+    },
+    {
+      "path": "이웃부스터_v1.0.1/extension/popup.html",
+      "bytes": 1870,
+      "sha256": "161d652ac5597ee23041a4adb3ffd159a69c4375bd56747b94ace20c0dfd1dc6",
+      "functions": [],
+      "bridge_paths": [],
+      "message_types": [],
+      "discovery": "regex hints; not an exhaustive JavaScript parser or call graph"
+    },
+    {
+      "path": "이웃부스터_v1.0.1/extension/popup.js",
+      "bytes": 2577,
+      "sha256": "e66b491d1e61661dfcc2dc7200bb3f4f89537a532c0abeb3da8b3f58c95ca8ce",
+      "functions": [
+        {
+          "value": "ask",
+          "line": 4
+        },
+        {
+          "value": "refresh",
+          "line": 13
+        }
+      ],
+      "bridge_paths": [],
+      "message_types": [],
+      "discovery": "regex hints; not an exhaustive JavaScript parser or call graph"
+    },
+    {
+      "path": "이웃부스터_v1.0.1/extension/selectors.js",
+      "bytes": 27477,
+      "sha256": "74d3fe6f997eb6c3d8e33b3d9fafd9db82e9ea9321ced24f0cbd9b9c7402c36f",
+      "functions": [],
+      "bridge_paths": [],
+      "message_types": [],
+      "discovery": "regex hints; not an exhaustive JavaScript parser or call graph"
+    },
+    {
+      "path": "이웃부스터_v1.0.1/extension/_locales/ko/messages.json",
+      "bytes": 219,
+      "sha256": "afc943a350378b16a1bee470de8ac8cd48b69f6cc092de8b6d91c77d9aa33dea",
+      "functions": [],
+      "bridge_paths": [],
+      "message_types": [],
+      "discovery": "regex hints; not an exhaustive JavaScript parser or call graph"
+    }
+  ],
+  "rea": {
+    "version": "6.5.0",
+    "evidence_id": "ev_7c562a757685fc3c284c769ef5248188ab9e569cd8f5f63e1e47b856e2931f26",
+    "statistics": {
+      "relevant_files": 9,
+      "nested_asar_containers": 0,
+      "text_bytes_read": 228840,
+      "invalid_utf8_files": 0,
+      "parsed_javascript_files": 6,
+      "visited_ast_nodes": 22022,
+      "findings": 8,
+      "modules": 0,
+      "parse_failures": 0
+    },
+    "nodes": 14046,
+    "relations": 13487,
+    "unknowns": 4166,
+    "coverage": {
+      "status": "unknown",
+      "truncated": false,
+      "omitted_nodes": 0,
+      "omitted_relations": 0,
+      "limits": []
+    }
+  },
+  "not_included": [
+    "third-party source text",
+    "executable",
+    "full disassembly",
+    "credentials",
+    "server implementation",
+    "runtime validation"
+  ],
+  "migration_column_candidates": [
+    {
+      "table": "history",
+      "column": "task_id",
+      "type": "TEXT"
+    },
+    {
+      "table": "history",
+      "column": "outcome",
+      "type": "TEXT"
+    },
+    {
+      "table": "history",
+      "column": "detect_method",
+      "type": "TEXT"
+    },
+    {
+      "table": "targets",
+      "column": "last_outcome",
+      "type": "TEXT"
+    },
+    {
+      "table": "targets",
+      "column": "generated_neighbor_text",
+      "type": "TEXT"
+    },
+    {
+      "table": "targets",
+      "column": "generated_comment_text",
+      "type": "TEXT"
+    },
+    {
+      "table": "templates",
+      "column": "edited",
+      "type": "INTEGER"
+    },
+    {
+      "table": "fragments",
+      "column": "edited",
+      "type": "INTEGER"
+    },
+    {
+      "table": "neighbors",
+      "column": "excluded",
+      "type": "INTEGER"
+    },
+    {
+      "table": "responders",
+      "column": "latest_post_id",
+      "type": "TEXT"
+    },
+    {
+      "table": "responders",
+      "column": "latest_post_url",
+      "type": "TEXT"
+    },
+    {
+      "table": "responders",
+      "column": "latest_post_title",
+      "type": "TEXT"
+    },
+    {
+      "table": "responders",
+      "column": "latest_post_at",
+      "type": "TEXT"
+    },
+    {
+      "table": "responders",
+      "column": "activity_status",
+      "type": "TEXT"
+    },
+    {
+      "table": "responders",
+      "column": "activity_checked_at",
+      "type": "TEXT"
+    },
+    {
+      "table": "reaction_events",
+      "column": "reply_comment_at",
+      "type": "TEXT"
+    },
+    {
+      "table": "history",
+      "column": "account_id",
+      "type": "TEXT"
+    },
+    {
+      "table": "history",
+      "column": "action_type",
+      "type": "TEXT"
+    },
+    {
+      "table": "history",
+      "column": "source",
+      "type": "TEXT"
+    },
+    {
+      "table": "history",
+      "column": "action_status",
+      "type": "TEXT"
+    },
+    {
+      "table": "history",
+      "column": "post_id",
+      "type": "TEXT"
+    },
+    {
+      "table": "history",
+      "column": "error_code",
+      "type": "TEXT"
+    },
+    {
+      "table": "history",
+      "column": "error_message",
+      "type": "TEXT"
+    },
+    {
+      "table": "history",
+      "column": "completed_at",
+      "type": "TEXT"
+    }
+  ],
+  "schema_limitations": [
+    "Columns are extracted from CREATE TABLE constants; migration candidates are listed separately. Dynamic migration assembly and final runtime schema were not executed."
+  ]
+}
