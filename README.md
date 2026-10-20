@@ -43,3 +43,16 @@ Copy-Item -LiteralPath "skills/goni-app-analysis" -Destination "$HOME/.codex/ski
 - [분석 명령·산출물·복사 프롬프트](skills/goni-app-analysis/references/workflow.md)
 
 타사 앱의 실행파일과 추출 원본은 이 공개 저장소에 포함하지 않습니다.
+
+## 고니 소통 작업실 프로그램
+
+[goni-community](skills/goni-community/SKILL.md)는 실행 가능한 로컬 UI와 CLI입니다. 계정별 글 목록, 본문 메모, Claude Code·Codex 댓글 초안, 중복 방지, 검토와 직접 처리한 결과를 관리합니다. 네이버 로그인·본문 자동 수집·자동 공감·댓글 등록은 포함하지 않습니다.
+
+```powershell
+python -X utf8 skills/goni-community/scripts/install.py
+& "$HOME/.goni-community/bin/goni-community.cmd" serve
+```
+
+브라우저에서 `http://127.0.0.1:8877`을 엽니다. Codex와 Claude Code용 스킬을 함께 설치하고 같은 로컬 DB를 사용합니다.
+
+[초보자 사용법·복사 프롬프트·전체 CLI 명령](skills/goni-community/references/quickstart.md)

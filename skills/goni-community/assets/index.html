@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>고니 소통 작업실</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="계정과 사용 안내">
+      <a class="brand" href="/"><span class="brand-icon">고</span><span>고니<small>소통 작업실</small></span></a>
+      <div class="rail-label">내 작업 계정</div>
+      <nav id="profiles" aria-label="계정 선택"></nav>
+      <button id="new-profile" class="outline full">＋ 계정 구분 추가</button>
+      <div class="rail-note"><strong>계정마다 따로 정리</strong><p>카테고리와 작업 기록을 나눕니다. 로그인 비밀번호는 입력하지 않습니다.</p></div>
+      <div class="rail-bottom"><span class="local-dot"></span> 이 컴퓨터에 저장<small>고니 Community <span id="version">0.1.0</span></small></div>
+    </aside>
+    <main>
+      <header class="topbar"><span>내 블로그 소통 노트</span><div><button id="refresh" class="quiet">새로고침</button><button id="help" class="quiet">사용법</button><button id="shutdown" class="quiet">앱 종료</button></div></header>
+      <section class="intro">
+        <div><p id="category" class="category">시작하기</p><h1 id="workspace-title">계정을 나누고, 글을 읽고,<br>내 말로 소통하세요.</h1><p id="intro-description">본문 메모를 바탕으로 초안을 검토하고 직접 처리한 결과를 남기는 작업실입니다.</p></div>
+        <div class="intro-actions"><button id="prompt-button" class="outline">Claude·Codex 초안 요청</button><button id="new-target" class="primary">＋ 글 추가</button></div>
+      </section>
+      <div class="mode-notice"><strong>초안·기록 모드</strong><span>프로그램은 네이버에 접속하거나 공감·댓글을 자동 등록하지 않습니다. 완료는 사용자가 직접 확인한 기록입니다.</span></div>
+      <section class="work-area" aria-label="작업 목록과 검토">
+        <div class="queue">
+          <div class="queue-header"><h2>작업 목록 <span id="job-count">0</span></h2><select id="filter" aria-label="작업 상태 필터"><option value="">모든 상태</option><option value="active">진행 중</option><option value="reviewed">검토 완료</option><option value="done">완료 기록</option><option value="uncertain">확인 필요</option><option value="skipped">건너뜀</option></select></div>
+          <div id="counts" class="counts"></div>
+          <div id="jobs" class="job-list"></div>
+        </div>
+        <div id="detail-empty" class="detail-empty"><div class="note-symbol">✎</div><h2>한 편씩 읽고 정리하세요</h2><p>목록에서 작업을 선택하면 본문 메모와<br>초안을 함께 검토할 수 있습니다.</p></div>
+        <article id="detail" class="detail" hidden>
+          <div class="detail-top"><span id="detail-action"></span><span id="detail-status" class="badge"></span></div>
+          <h2 id="detail-title"></h2>
+          <a id="detail-url" class="source-link" target="_blank" rel="noopener noreferrer">원문 주소</a>
+          <section class="editor-section">
+            <div class="section-title"><h3>읽은 내용</h3><button id="save-source" class="quiet">메모 저장</button></div>
+            <label class="sr-only" for="source-title">글 제목</label><input id="source-title" maxlength="500" placeholder="글 제목">
+            <label class="sr-only" for="source-excerpt">본문 메모</label><textarea id="source-excerpt" rows="5" maxlength="16000" placeholder="직접 읽은 본문이나 구체적으로 언급할 부분을 넣어 주세요."></textarea>
+          </section>
+          <section id="draft-section" class="editor-section">
+            <div class="section-title"><h3>내 댓글 초안</h3><button id="copy-draft" class="quiet">복사</button></div>
+            <label class="sr-only" for="draft-text">댓글 또는 서로이웃 요청 초안</label><textarea id="draft-text" rows="5" maxlength="1500" placeholder="본문의 구체적인 내용을 짚는 1~2문장을 작성하세요."></textarea>
+            <div class="draft-footer"><span id="draft-length">0 / 1500</span><button id="save-draft" class="outline">초안 저장</button><button id="review" class="primary">검토 완료</button></div>
+          </section>
+          <div id="like-review" class="like-review" hidden><p>본문 메모를 확인하고 공감 작업을 검토해 주세요.</p><button id="review-like" class="primary">검토 완료</button></div>
+          <section class="result-section">
+            <h3>직접 처리한 결과</h3>
+            <label class="sr-only" for="result-status">결과 상태</label><select id="result-status"><option value="done">완료 기록</option><option value="uncertain">확인 필요</option><option value="skipped">건너뜀</option></select>
+            <label class="sr-only" for="evidence">확인 근거</label><textarea id="evidence" rows="2" maxlength="4000" placeholder="직접 확인한 결과와 시각, 또는 건너뛴 이유를 적어 주세요."></textarea>
+            <div class="result-footer"><span id="evidence-type"></span><button id="record" class="outline">결과 기록</button></div>
+            <div id="reopen-area" hidden><label for="reopen-reason">다시 열기 사유</label><input id="reopen-reason" maxlength="2000" placeholder="이전 결과를 확인한 뒤 사유를 적어 주세요."><button id="reopen" class="quiet">다시 열기</button></div>
+          </section>
+          <details id="history"><summary>변경 기록</summary><ol id="events"></ol></details>
+        </article>
+      </section>
+    </main>
+  </div>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="profile-dialog"><form id="profile-form"><header><h2>계정 구분 추가</h2><button type="button" class="close-dialog quiet" aria-label="닫기">닫기</button></header><p>실제 로그인은 연결하지 않습니다. 계정과 카테고리를 구별할 이름을 정하세요.</p>
+    <label>별칭<input name="name" required maxlength="80" placeholder="예: 스타·연예"></label>
+    <label>네이버 ID<input name="naver_id" required maxlength="64" autocomplete="off" placeholder="이 계정으로 관리할 블로그 ID"></label>
+    <label>카테고리<input name="category" required maxlength="80" placeholder="예: 영화·드라마·배우"></label>
+    <details><summary>Aside 프로필 메모 (선택)</summary><p>기존에 구분한 프로필의 식별자만 보관합니다. 브라우저 실행 기능은 없습니다.</p><label>Aside 계정 별칭<input name="aside_account" maxlength="80" placeholder="예: u0"></label><label>Aside 프로필 ID<input name="aside_profile" maxlength="120"></label></details>
+    <footer><button class="primary" type="submit">계정 구분 저장</button></footer>
+  </form></dialog>
+  <dialog id="target-dialog"><form id="target-form"><header><h2>읽을 글 추가</h2><button type="button" class="close-dialog quiet" aria-label="닫기">닫기</button></header>
+    <p id="add-profile-label"></p><label>게시글 주소<input name="url" type="url" required placeholder="https://blog.naver.com/블로그ID/게시글번호"></label><label>제목<input name="title" maxlength="500"></label><label>본문 메모<textarea name="excerpt" rows="5" maxlength="16000" placeholder="읽은 내용이나 발췌를 넣어 주세요."></textarea></label>
+    <fieldset><legend>정리할 작업</legend><label class="check"><input type="checkbox" name="action" value="like" checked> 공감</label><label class="check"><input type="checkbox" name="action" value="comment" checked> 댓글</label><label class="check"><input type="checkbox" name="action" value="neighbor"> 서로이웃</label></fieldset>
+    <footer><button class="primary" type="submit">목록에 추가</button></footer>
+  </form></dialog>
+  <dialog id="prompt-dialog"><header><h2>Claude·Codex에 초안 요청</h2><button class="close-dialog quiet" aria-label="닫기">닫기</button></header><p>진행 중인 글 최대 5개의 본문 메모가 들어 있습니다. 복사해서 사용 중인 에이전트에 전달하세요. 답변은 각 작업의 초안에 저장합니다.</p><label class="sr-only" for="prompt-text">초안 요청 프롬프트</label><textarea id="prompt-text" rows="15" readonly></textarea><footer><button id="copy-prompt" class="primary">프롬프트 복사</button></footer></dialog>
+  <dialog id="help-dialog"><header><h2>처음 쓰는 순서</h2><button class="close-dialog quiet" aria-label="닫기">닫기</button></header><ol class="help-steps"><li><strong>계정 구분</strong><p>네이버 ID와 카테고리를 저장합니다. 비밀번호는 필요 없습니다.</p></li><li><strong>글 추가</strong><p>게시글 주소와 읽은 본문을 넣습니다. 같은 계정의 같은 글·작업은 중복 추가되지 않습니다.</p></li><li><strong>초안 작성</strong><p>Claude·Codex 요청 프롬프트를 복사하거나 직접 초안을 씁니다.</p></li><li><strong>검토</strong><p>본문과 맞는 문장인지 확인한 후 검토 완료를 누릅니다.</p></li><li><strong>결과 기록</strong><p>직접 처리한 결과와 근거를 기록합니다. 등록 여부가 불명확하면 확인 필요를 선택합니다.</p></li></ol><p>CLI와 두 에이전트는 같은 로컬 데이터 폴더를 사용합니다. 외부 자동 등록은 지원하지 않습니다.</p></dialog>
+</body>
+</html>

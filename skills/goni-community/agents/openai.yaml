@@ -1,0 +1,4 @@
+interface:
+  display_name: "고니 소통 작업실"
+  short_description: "계정별 본문 메모와 댓글 초안을 정리하고 직접 확인한 결과를 기록합니다."
+  default_prompt: "$goni-community 내 계정의 대기 글 5개를 확인하고 본문 메모에 맞는 댓글 초안을 저장해줘."
