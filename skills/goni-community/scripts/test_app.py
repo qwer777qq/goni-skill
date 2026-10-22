@@ -1,4 +1,5 @@
 import http.client
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from contextlib import closing
 import json
 from pathlib import Path
@@ -9,6 +10,7 @@ import unittest
 
 from core import InputError, Store, canonical
 from server import create_server
+from start import is_workspace
 
 
 class WorkspaceTests(unittest.TestCase):
@@ -139,6 +141,10 @@ class WorkspaceTests(unittest.TestCase):
                 result = response.status, response.read()
                 connection.close()
                 return result
+            self.assertTrue(is_workspace(server.server_port))
+            status, health = call("GET", "/api/health")
+            self.assertEqual(status, 200)
+            self.assertEqual(set(json.loads(health)), {"app", "version", "mode"})
             status, body = call("GET", "/api/workspace")
             self.assertEqual(status, 200)
             csrf = json.loads(body)["csrf"]
@@ -151,6 +157,26 @@ class WorkspaceTests(unittest.TestCase):
             self.assertEqual(call("GET", "/../../workspace.sqlite3")[0], 404)
             self.assertEqual(call("GET", "/api/workspace", headers={"Host": "other.example"})[0], 403)
             self.assertEqual(call("GET", "/")[0], 200)
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join(timeout=3)
+
+    def test_launcher_does_not_accept_unrelated_local_server(self):
+        class OtherApp(BaseHTTPRequestHandler):
+            def log_message(self, *_):
+                pass
+
+            def do_GET(self):
+                self.send_response(200)
+                self.end_headers()
+                self.wfile.write(b'{"app":"another-app"}')
+
+        server = ThreadingHTTPServer(("127.0.0.1", 0), OtherApp)
+        worker = threading.Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            self.assertFalse(is_workspace(server.server_port))
         finally:
             server.shutdown()
             server.server_close()

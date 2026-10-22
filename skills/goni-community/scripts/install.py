@@ -9,7 +9,8 @@ import sys
 FILES = [
     "SKILL.md", "agents/openai.yaml", "references/quickstart.md",
     "scripts/core.py", "scripts/server.py", "scripts/cli.py", "scripts/install.py",
-    "scripts/test_app.py", "assets/index.html", "assets/style.css", "assets/app.js",
+    "scripts/test_app.py", "scripts/start.py", "INSTALL.cmd", "START.cmd",
+    "assets/index.html", "assets/style.css", "assets/app.js",
 ]
 
 
@@ -44,7 +45,7 @@ def install(home):
     hashes = {f: hashlib.sha256((app / f).read_bytes()).hexdigest() for f in FILES}
     (home / ".goni-community" / "installed-files.json").write_text(
         json.dumps(hashes, indent=2), encoding="utf-8")
-    return {"app": str(app), "launcher": str(launcher),
+    return {"app": str(app), "launcher": str(launcher), "start": str(app / "START.cmd"),
             "skills": [str(x) for x in destinations[1:]],
             "state": str(home / ".goni-community"),
             "path_modified": False, "external_posting": False}

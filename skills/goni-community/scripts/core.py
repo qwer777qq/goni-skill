@@ -10,7 +10,7 @@ import re
 import sqlite3
 from urllib.parse import parse_qs, urlsplit
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 DEFAULT_STATE = Path.home() / ".goni-community"
 ACTIONS = {"like": "공감", "comment": "댓글", "neighbor": "서로이웃"}
 STATUSES = {"pending": "준비", "draft": "초안", "reviewed": "검토 완료",

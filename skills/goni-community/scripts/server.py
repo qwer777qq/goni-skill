@@ -7,7 +7,7 @@ import secrets
 import threading
 from urllib.parse import parse_qs, urlsplit
 
-from core import InputError
+from core import InputError, VERSION
 
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
 
@@ -51,6 +51,9 @@ def create_server(store, port=0):
                 if url.path in assets:
                     file, mime = assets[url.path]
                     return self.send(200, (ASSETS / file).read_bytes(), mime)
+                if url.path == "/api/health":
+                    return self.send(200, {"app": "goni-community", "version": VERSION,
+                                           "mode": "local_review"})
                 if url.path == "/api/workspace":
                     return self.send(200, dict(store.workspace(q.get("profile", [None])[0]), csrf=csrf))
                 if url.path == "/api/prompt":
