@@ -18,7 +18,7 @@ description: Aside CLI의 계정별 브라우저 프로필로 네이버 홈·블
 2. `aside account list`, 각 `aside --account <account> host profiles --json`으로 연결 상태를 확인한다. signed out인 Aside 계정도 로컬 프로필이 연결되어 있을 수 있다.
 3. 계정과 프로필을 모두 명시한다. 원하는 프로필이 없으면 다른 업무 계정으로 대체하거나 로그아웃하지 않는다.
 4. `listBrowserTabs()`로 현재 탭을 조회하고 해당 탭을 연결한다. 없으면 `openTab('https://m.naver.com')`. 프로필 이름과 실제 사이트 로그인은 별개이므로 MY/계정 화면에서 대상 네이버 ID를 확인한다.
-5. 알려진 CLI 경로는 `C:/Users/mach7/AppData/Local/Aside/CLI/versions/win-x64/1.26.1019.1018/aside.exe`다. 경로가 없으면 설치된 공식 서명 실행파일을 확인한다.
+5. 알려진 CLI 경로는 `C:/Users/USER/AppData/Local/Aside/CLI/versions/win-x64/1.26.1019.1018/aside.exe`다. 경로가 없으면 설치된 공식 서명 실행파일을 확인한다.
 
 ## 탐색과 반응
 

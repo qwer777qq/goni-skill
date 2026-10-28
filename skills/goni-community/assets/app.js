@@ -39,6 +39,7 @@ async function load() {
   $("workspace-title").textContent = current ? current.name + "의 소통 노트" : "계정을 나누고, 글을 읽고, 내 말로 소통하세요.";
   $("intro-description").textContent = current ? current.naver_id + " 계정으로 정리한 글과 초안을 살펴보세요." : "왼쪽에서 계정 구분을 추가하고 첫 글을 등록해 주세요.";
   $("new-target").disabled = !current;
+  $("bulk-targets").disabled = !current;
   $("prompt-button").disabled = !current;
   const job = state.jobs.find(j => j.id === selected);
   showDetail(job || null);
@@ -123,6 +124,32 @@ $("new-profile").onclick = () => $("profile-dialog").showModal();
 $("help").onclick = () => $("help-dialog").showModal();
 document.querySelectorAll(".close-dialog").forEach(b => { b.onclick = () => b.closest("dialog").close(); });
 $("new-target").onclick = () => { $("add-profile-label").textContent = profile + " 계정에 추가합니다."; $("target-dialog").showModal(); };
+$("bulk-targets").onclick = () => {
+  const current = state.profiles.find(p => p.name === profile);
+  $("bulk-profile-label").textContent = profile + " · " + current.naver_id + " · " + current.category;
+  $("bulk-form").reset(); $("bulk-result").hidden = true; $("bulk-error").hidden = true;
+  $("bulk-dialog").showModal(); $("bulk-links").focus();
+};
+$("bulk-form").onsubmit = async event => {
+  event.preventDefault();
+  if ($("bulk-submit").disabled) return;
+  $("bulk-submit").disabled = true; $("bulk-error").hidden = true;
+  $("bulk-result").hidden = true;
+  try {
+    const form = new FormData(event.target);
+    const result = await request("/api/add-links", {profile, text: form.get("text"), actions: form.getAll("action")});
+    $("bulk-summary").textContent = "입력 " + result.input_count + "개 · 새 글 " + result.added_posts + "개 · 중복 " + result.duplicate_count + "개 · 잘못된 주소 " + result.invalid_count + "개 · 추가 작업 " + result.added_jobs + "개";
+    $("bulk-items").replaceChildren(...result.items.map(item => {
+      const label = item.status === "added" ? "추가" : item.status === "duplicate" ? "중복 제외" : "주소 확인 필요";
+      return el("li", item.line + "행 · " + label + " · " + (item.reason || "준비 상태로 저장") + (item.url ? " · " + item.url : "") + (item.profile ? " · 기존 계정 구분: " + item.profile : ""));
+    }));
+    $("bulk-result").hidden = false;
+    $("filter").value = "active";
+    await load();
+  } catch (error) {
+    $("bulk-error").textContent = error.message; $("bulk-error").hidden = false;
+  } finally { $("bulk-submit").disabled = false; }
+};
 $("profile-form").onsubmit = safe(async event => {
   const data = Object.fromEntries(new FormData(event.target));
   await request("/api/profile", data);

@@ -29,6 +29,10 @@ def parser():
     a.add_argument("--excerpt", default="")
     a.add_argument("--excerpt-file", type=Path)
     a.add_argument("--actions", default="like,comment")
+    a = commands.add_parser("add-links")
+    a.add_argument("--profile", required=True)
+    a.add_argument("--file", required=True, type=Path)
+    a.add_argument("--actions", default="like,comment")
     a = commands.add_parser("import-csv")
     a.add_argument("--profile", required=True)
     a.add_argument("--file", required=True, type=Path)
@@ -86,6 +90,8 @@ def main(argv=None):
             if args.excerpt_file:
                 data["excerpt"] = args.excerpt_file.read_text(encoding="utf-8-sig")
             result = store.add(data)
+        elif c == "add-links":
+            result = store.add_links(args.profile, args.file.read_text(encoding="utf-8-sig"), args.actions)
         elif c == "import-csv":
             result = store.import_csv(args.profile, args.file, args.actions)
         elif c == "batch":

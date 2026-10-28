@@ -43,6 +43,39 @@ def plugin_info() -> dict[str, str] | None:
     return max(found, key=lambda item: tuple(int(n) for n in re.findall(r"\d+", item["version"]))) if found else None
 
 
+def scv_plugin_enabled(project: Path) -> bool | None:
+    codex = shutil.which("codex")
+    if not codex:
+        return None
+    result = command([codex, "plugin", "list"], project, timeout=45)
+    if result.returncode:
+        return None
+    for line in result.stdout.splitlines():
+        if line.strip().startswith("scv@scv-codex"):
+            return "installed, enabled" in line
+    return False
+
+
+def graphify_install_paths(project: Path) -> list[dict[str, str | int]]:
+    primary = shutil.which("graphify")
+    paths = [primary] if primary else []
+    if os.name == "nt":
+        located = command(["where.exe", "graphify"], project)
+        if located.returncode == 0:
+            paths.extend(located.stdout.splitlines())
+    unique = list(dict.fromkeys(str(Path(item).resolve()) for item in paths if item))
+    details: list[dict[str, str | int]] = []
+    for path in unique:
+        result = command([path, "--version"], project, timeout=20)
+        match = re.search(r"graphify\s+([\d.]+)", result.stdout)
+        details.append({
+            "path": path,
+            "version": match.group(1) if match else "unknown",
+            "exit_code": result.returncode,
+        })
+    return details
+
+
 def local_remote(project: Path) -> str | None:
     if not shutil.which("git"):
         return None
@@ -55,17 +88,23 @@ def doctor(project: Path) -> int:
         version = importlib.metadata.version("graphifyy")
     except importlib.metadata.PackageNotFoundError:
         version = None
+    plugin = plugin_info()
+    plugin_enabled = scv_plugin_enabled(project)
+    graphify_installs = graphify_install_paths(project)
     checks = {
         "project": str(project),
-        "scv_plugin": plugin_info(),
+        "scv_plugin": plugin,
+        "scv_plugin_enabled": plugin_enabled,
         "scv_project_ready": (project / "scv/SCV.md").is_file(),
         "graphify_package": version,
         "graphify_cli": shutil.which("graphify"),
+        "graphify_installs": graphify_installs,
         "git_cli": shutil.which("git"),
         "github_cli": shutil.which("gh"),
         "origin": local_remote(project),
     }
-    checks["ready"] = bool(checks["scv_plugin"] and checks["scv_project_ready"] and version and checks["graphify_cli"] and checks["git_cli"] and checks["github_cli"])
+    checks["tools_ready"] = bool(plugin and plugin_enabled and version and graphify_installs and checks["git_cli"] and checks["github_cli"])
+    checks["ready"] = bool(checks["tools_ready"] and checks["scv_project_ready"])
     print(json.dumps(checks, ensure_ascii=False, indent=2))
     return 0 if checks["ready"] else 1
 

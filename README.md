@@ -1,5 +1,34 @@
 # 고니 스킬
 
+## 고니 스킬 전체 묶음 · 11종
+
+| 스킬 | 역할 |
+|---|---|
+| [goni](SKILL.md) | GitHub 위치·개발 도구 점검·작업 기억 |
+| [goni-project-workflow](skills/goni-project-workflow/SKILL.md) | 반복 개발 작업 흐름 |
+| [goni-rea](skills/goni-rea/SKILL.md) | 기능 분석·독립 구현 설계 |
+| [goni-app-analysis](skills/goni-app-analysis/SKILL.md) | 배포 앱·확장 정적 분석 |
+| [goni-alphacut](skills/goni-alphacut/SKILL.md) | 영상 편집 화면·템플릿 조사 |
+| [goni-community](skills/goni-community/SKILL.md) | 로컬 소통 목록·댓글 초안 관리 |
+| [goni-naver-community](skills/goni-naver-community/SKILL.md) | 계정별 브라우저 업무·중복 기록 |
+| [goni-shortform-highlights](skills/goni-shortform-highlights/SKILL.md) | 맥락 기반 숏폼 구성·장면집 출력 |
+| [goni-cliploom-highlights](skills/goni-cliploom-highlights/SKILL.md) | 별도 Cliploom 설치·제작 세트 점검 |
+| [goni-jiyoung-skill5](skills/goni-jiyoung-skill5/SKILL.md) | 파크골프 편집·검수·편집기 인수 |
+| [goni-reel-studio](skills/goni-reel-studio/SKILL.md) | 다중 장면·반전·명암·MCP 릴스 출력 |
+
+**고니 사용자 스킬 묶음**입니다. 타사 플러그인 전체나 모델·편집 앱·원본 영상·로그인 정보는 포함하지 않습니다. 스킬 설치와 실제 도구 설치/연결은 별개입니다.
+
+```powershell
+git clone https://github.com/qwer777qq/goni-skill.git
+cd goni-skill
+python scripts/install_skills.py --client both --dry-run
+python scripts/install_skills.py --client both
+# 기존 설치를 백업하고 갱신할 때만:
+python scripts/install_skills.py --client both --update
+```
+
+새 Codex·Claude Code 세션에서 사용합니다. **[실행 앱·MCP 설치·상세 프롬프트](https://github.com/qwer777qq/goni-shortform-highlights/blob/main/docs/reel-studio.md)**는 장면집 저장소에서 제공합니다. Cliploom과 다른 편집 도구는 각 스킬의 설치 전제 조건을 따릅니다. 개인 PC 위치 파일과 작업 데이터는 배포에서 제외했습니다.
+
 고니 GitHub 저장소 확인, SCV·Graphify 점검, 코드 관계 분석, 작업 기억을 위한 개인 Codex 스킬입니다.
 
 ## 설치

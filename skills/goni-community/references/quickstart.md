@@ -45,6 +45,18 @@ python -X utf8 skills/goni-community/scripts/install.py
 
 ## 2. 화면 열기
 
+### 여러 링크 붙여넣기 (0.1.2)
+
+계정을 선택하고 **링크 한 번에 추가**를 누른다. 한 줄에 개별 블로그 게시글 URL 하나씩, 최대 200개를 넣는다.
+공감·댓글·서로이웃 중 새 글에 만들 작업을 선택하고 **중복 제외하고 추가**를 누른다.
+추가된 글·작업 수, 중복과 잘못된 주소 수가 표시된다. 잘못된 줄은 제외하고 정상 주소를 저장한다.
+모바일·PC·PostView 주소를 같은 글로 정규화한다. 같은 네이버 ID로 등록된 기존 글은 다른 별칭에 있어도 제외하며 상태·초안을 바꾸지 않는다.
+블로그 홈·단축 링크·클립은 지원하지 않는다. 자동 본문 수집·외부 반응 없이 준비 목록만 만든다.
+
+CLI: `python -X utf8 scripts/cli.py add-links --profile "계정별칭" --file links.txt --actions like,comment`
+
+현재 이 앱은 localhost용이다. 로그인·사용자별 권한 분리가 없으므로 공개 호스팅에 그대로 노출하지 않는다.
+
 ```powershell
 & "$HOME/.goni-community/bin/goni-community.cmd" serve
 ```

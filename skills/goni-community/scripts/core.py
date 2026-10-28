@@ -10,7 +10,7 @@ import re
 import sqlite3
 from urllib.parse import parse_qs, urlsplit
 
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 DEFAULT_STATE = Path.home() / ".goni-community"
 ACTIONS = {"like": "공감", "comment": "댓글", "neighbor": "서로이웃"}
 STATUSES = {"pending": "준비", "draft": "초안", "reviewed": "검토 완료",
@@ -158,6 +158,42 @@ class Store:
             jobs.append(dict(db.execute("SELECT * FROM jobs WHERE target_id=? AND action=?",
                                         (target["id"], action)).fetchone()))
         return {"target_id": target["id"], "profile": target["profile"], "added_jobs": added, "jobs": jobs}
+
+    def add_links(self, profile, text, actions="like,comment"):
+        text = clean(text, "링크 목록", 100000)
+        lines = [(i, line.strip()) for i, line in enumerate(text.splitlines(), 1) if line.strip()]
+        if len(lines) > 200:
+            raise InputError("한 번에 링크 200개까지 추가할 수 있습니다.")
+        actions = parse_actions(actions)
+        report = {"input_count": len(lines), "added_posts": 0, "added_jobs": 0,
+                  "duplicate_count": 0, "invalid_count": 0, "items": []}
+        seen = set()
+        with self.db() as db:
+            db.execute("BEGIN IMMEDIATE")
+            p = self._profile(db, profile)
+            for number, raw in lines:
+                try:
+                    url = canonical(raw)
+                except InputError as exc:
+                    report["invalid_count"] += 1
+                    report["items"].append({"line": number, "status": "invalid", "reason": str(exc)})
+                    continue
+                old = db.execute("SELECT profile FROM targets WHERE naver_id=? AND url=?",
+                                 (p["naver_id"], url)).fetchone()
+                if url in seen or old:
+                    report["duplicate_count"] += 1
+                    report["items"].append({"line": number, "url": url, "status": "duplicate",
+                                           "reason": "입력 목록 내 중복" if url in seen else "이미 등록된 글",
+                                           "profile": old["profile"] if old else profile})
+                    seen.add(url)
+                    continue
+                seen.add(url)
+                result = self.add({"profile": profile, "url": url, "actions": actions}, db)
+                report["added_posts"] += 1
+                report["added_jobs"] += result["added_jobs"]
+                report["items"].append({"line": number, "url": url, "status": "added",
+                                       "job_ids": [j["id"] for j in result["jobs"]]})
+        return report
 
     def import_csv(self, profile, path, actions="like,comment"):
         with Path(path).open(encoding="utf-8-sig", newline="") as stream:

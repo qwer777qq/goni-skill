@@ -162,6 +162,37 @@ class WorkspaceTests(unittest.TestCase):
             server.server_close()
             worker.join(timeout=3)
 
+    def test_bulk_twenty_links_dedupes_variants_and_preserves_existing(self):
+        old = self.add(url="https://blog.naver.com/writer/123")
+        self.store.record(old["id"], "skipped", "기존 결과 보존")
+        self.store.profile({"name": "alias", "naver_id": "my_blog", "category": "다른 분류"})
+        lines = [f"https://m.blog.naver.com/writer/{200+i}" for i in range(20)]
+        lines += ["https://blog.naver.com/writer/200?tracking=1",
+                  "https://blog.naver.com/PostView.naver?blogId=writer&logNo=123",
+                  "https://clip.naver.com/contents", "not a URL"]
+        result = self.store.add_links("alias", "\n".join(lines))
+        self.assertEqual((result["added_posts"], result["added_jobs"], result["duplicate_count"], result["invalid_count"]), (20, 40, 2, 2))
+        again = self.store.add_links("alias", "\n".join(lines), "neighbor")
+        self.assertEqual(again["added_jobs"], 0)
+        self.assertEqual(again["duplicate_count"], 22)
+        original = self.store.workspace("film")["jobs"][0]
+        self.assertEqual(original["status"], "skipped")
+        self.assertEqual(original["evidence"], "기존 결과 보존")
+
+    def test_bulk_limits_and_account_isolation(self):
+        url = "https://blog.naver.com/writer/123"
+        for text in [" ", "\n".join([url]*201)]:
+            with self.assertRaises(InputError):
+                self.store.add_links("film", text)
+        with self.assertRaises(InputError):
+            self.store.add_links("film", url, [])
+        with self.assertRaises(InputError):
+            self.store.add_links("missing", url)
+        self.assertEqual(self.store.workspace()["jobs"], [])
+        self.store.add_links("film", url)
+        self.store.profile({"name": "other", "naver_id": "other_id", "category": "영화"})
+        self.assertEqual(self.store.add_links("other", url)["added_posts"], 1)
+
     def test_launcher_does_not_accept_unrelated_local_server(self):
         class OtherApp(BaseHTTPRequestHandler):
             def log_message(self, *_):

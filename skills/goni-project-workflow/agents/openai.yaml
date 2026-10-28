@@ -1,0 +1,4 @@
+interface:
+  display_name: "고니 | 개발 작업 이어가기"
+  short_description: "SCV·Graphify와 반복 명령·담당 역할·작업 기억을 연결합니다"
+  default_prompt: "$goni-project-workflow로 이 프로젝트의 도구 상태와 지난 작업을 확인하고 이어서 진행해줘."

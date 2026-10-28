@@ -1,0 +1,14 @@
+{
+  "name": "김지영_회차명_편집사본",
+  "source_uri": "file:///Users/editor/Movies/episode/source.mp4",
+  "source_name": "source.mp4",
+  "fps": "30000/1001",
+  "width": 1920,
+  "height": 1080,
+  "source_frames": 18000,
+  "cuts": [{"in": 0, "out": 300}, {"in": 600, "out": 900}],
+  "captions": [
+    {"in": 30, "out": 120, "text": "실제 발화로 교체", "template": "JY_LESSON_WHITE"},
+    {"in": 660, "out": 750, "text": "실제 응답으로 교체", "template": "JY_REPLY_NAVY"}
+  ]
+}

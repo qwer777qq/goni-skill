@@ -21,7 +21,7 @@
       <header class="topbar"><span>내 블로그 소통 노트</span><div><button id="refresh" class="quiet">새로고침</button><button id="help" class="quiet">사용법</button><button id="shutdown" class="quiet">앱 종료</button></div></header>
       <section class="intro">
         <div><p id="category" class="category">시작하기</p><h1 id="workspace-title">계정을 나누고, 글을 읽고,<br>내 말로 소통하세요.</h1><p id="intro-description">본문 메모를 바탕으로 초안을 검토하고 직접 처리한 결과를 남기는 작업실입니다.</p></div>
-        <div class="intro-actions"><button id="prompt-button" class="outline">Claude·Codex 초안 요청</button><button id="new-target" class="primary">＋ 글 추가</button></div>
+        <div class="intro-actions"><button id="prompt-button" class="outline">Claude·Codex 초안 요청</button><button id="bulk-targets" class="outline">링크 한 번에 추가</button><button id="new-target" class="primary">＋ 글 추가</button></div>
       </section>
       <div class="mode-notice"><strong>초안·기록 모드</strong><span>프로그램은 네이버에 접속하거나 공감·댓글을 자동 등록하지 않습니다. 완료는 사용자가 직접 확인한 기록입니다.</span></div>
       <section class="work-area" aria-label="작업 목록과 검토">
@@ -65,6 +65,14 @@
     <label>카테고리<input name="category" required maxlength="80" placeholder="예: 영화·드라마·배우"></label>
     <details><summary>Aside 프로필 메모 (선택)</summary><p>기존에 구분한 프로필의 식별자만 보관합니다. 브라우저 실행 기능은 없습니다.</p><label>Aside 계정 별칭<input name="aside_account" maxlength="80" placeholder="예: u0"></label><label>Aside 프로필 ID<input name="aside_profile" maxlength="120"></label></details>
     <footer><button class="primary" type="submit">계정 구분 저장</button></footer>
+  </form></dialog>
+  <dialog id="bulk-dialog" aria-labelledby="bulk-heading"><form id="bulk-form"><header><h2 id="bulk-heading">링크 한 번에 추가</h2><button type="button" class="close-dialog quiet" aria-label="닫기">닫기</button></header>
+    <p id="bulk-profile-label"></p><p>한 줄에 네이버 블로그 게시글 주소 하나씩 넣어 주세요. 최대 200개까지 가능합니다. 모바일·PC 주소가 같은 글이면 하나로 처리합니다. 기존 글은 상태와 내용을 그대로 보존합니다.</p>
+    <label for="bulk-links">게시글 링크 목록</label><textarea id="bulk-links" name="text" rows="10" maxlength="100000" required placeholder="https://m.blog.naver.com/blog_id/123&#10;https://blog.naver.com/blog_id/456"></textarea>
+    <p>블로그 홈·단축 링크·클립 주소는 지원하지 않습니다. 본문 수집이나 공감·댓글 실행 없이 목록에만 추가합니다.</p>
+    <fieldset><legend>새 글에 만들 작업</legend><label class="check"><input type="checkbox" name="action" value="like" checked> 공감</label><label class="check"><input type="checkbox" name="action" value="comment" checked> 댓글</label><label class="check"><input type="checkbox" name="action" value="neighbor"> 서로이웃</label></fieldset>
+    <footer><button id="bulk-submit" class="primary" type="submit">중복 제외하고 추가</button></footer>
+    <p id="bulk-error" role="alert" hidden></p><section id="bulk-result" aria-live="polite" hidden><h3>추가 결과</h3><p id="bulk-summary"></p><ol id="bulk-items"></ol></section>
   </form></dialog>
   <dialog id="target-dialog"><form id="target-form"><header><h2>읽을 글 추가</h2><button type="button" class="close-dialog quiet" aria-label="닫기">닫기</button></header>
     <p id="add-profile-label"></p><label>게시글 주소<input name="url" type="url" required placeholder="https://blog.naver.com/블로그ID/게시글번호"></label><label>제목<input name="title" maxlength="500"></label><label>본문 메모<textarea name="excerpt" rows="5" maxlength="16000" placeholder="읽은 내용이나 발췌를 넣어 주세요."></textarea></label>

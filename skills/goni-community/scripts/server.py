@@ -89,6 +89,9 @@ def create_server(store, port=0):
                     result = store.profile(data)
                 elif route == "/api/add":
                     result = store.add(data)
+                elif route == "/api/add-links":
+                    result = store.add_links(data.get("profile", ""), data.get("text"),
+                                             data.get("actions", "like,comment"))
                 elif route == "/api/source":
                     result = store.source(int(data["id"]), data.get("title"), data.get("excerpt"))
                 elif route == "/api/draft":
