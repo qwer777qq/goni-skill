@@ -1,0 +1,31 @@
+{
+  "paid_api_enabled": false,
+  "network_calls": false,
+  "generative_model_included": false,
+  "implemented": [
+    "narrated product photo cards",
+    "trim",
+    "concatenate",
+    "pitch-preserving speed",
+    "ASS captions",
+    "fixed-camera screen replacement",
+    "protected screen regions",
+    "audio-envelope timing suggestions",
+    "Windows installed SAPI narration",
+    "minimum duration check",
+    "decode verification",
+    "sample frame export",
+    "13 OFL font files",
+    "8 per-cue text animation presets"
+  ],
+  "not_implemented": [
+    "Seedance model extraction",
+    "text-to-photoreal-video",
+    "voice cloning",
+    "automatic lip sync",
+    "moving-camera screen tracking",
+    "semantic prop and background generation",
+    "real product benchmark"
+  ],
+  "validation": "references/validation.md"
+}

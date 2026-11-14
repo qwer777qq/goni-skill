@@ -1,6 +1,6 @@
 # 고니 스킬
 
-## 고니 스킬 전체 묶음 · 11종
+## 고니 스킬 전체 묶음 · 12종
 
 | 스킬 | 역할 |
 |---|---|
@@ -15,6 +15,9 @@
 | [goni-cliploom-highlights](skills/goni-cliploom-highlights/SKILL.md) | 별도 Cliploom 설치·제작 세트 점검 |
 | [goni-jiyoung-skill5](skills/goni-jiyoung-skill5/SKILL.md) | 파크골프 편집·검수·편집기 인수 |
 | [goni-reel-studio](skills/goni-reel-studio/SKILL.md) | 다중 장면·반전·명암·MCP 릴스 출력 |
+| [goni-reverse-video](skills/goni-reverse-video/SKILL.md) | 생성 크레딧 없는 로컬 제품 설명영상·폰트 13개·텍스트 효과 8종 |
+
+**로컬 제품 영상 CLI:** [설치·사용법](skills/goni-reverse-video/references/cli.md), [검증 범위](skills/goni-reverse-video/references/validation.md). `python skills/goni-reverse-video/scripts/install.py --target both`로 이 스킬을 Codex·Claude Code에 설치한다. Python·FFmpeg는 별도이며 Seedance 생성 모델은 포함하지 않는다.
 
 **고니 사용자 스킬 묶음**입니다. 타사 플러그인 전체나 모델·편집 앱·원본 영상·로그인 정보는 포함하지 않습니다. 스킬 설치와 실제 도구 설치/연결은 별개입니다.
 

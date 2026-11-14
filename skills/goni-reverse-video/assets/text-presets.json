@@ -1,0 +1,14 @@
+{
+  "observed_original": "Only original-pop with Paperlogy 7 Bold is reproduced from the owner's production source. Other effects/fonts below are independently added extensions.",
+  "animations": ["static", "fade", "original-pop", "slide-up", "slide-left", "zoom", "bounce", "typewriter"],
+  "presets": {
+    "original": {"font":"Paperlogy 7 Bold","animation":"original-pop","highlight_color":"#FFF59A"},
+    "clean": {"font":"Pretendard","animation":"fade","bold":true},
+    "headline": {"font":"Paperlogy 9 Black","animation":"zoom","color":"#B9F5D8"},
+    "question": {"font":"Do Hyeon","animation":"bounce","color":"#FFF59A"},
+    "step": {"font":"Paperlogy 6 SemiBold","animation":"slide-up"},
+    "detail": {"font":"Pretendard","animation":"typewriter"},
+    "compare": {"font":"Pretendard Black","animation":"slide-left"},
+    "note": {"font":"Paperlogy 4 Regular","animation":"static"}
+  }
+}

@@ -1,0 +1,119 @@
+[
+  {
+    "file": "Paperlogy-1Thin.ttf",
+    "source": "existing installed unmodified font; author: https://github.com/Freesentation/paperlogy",
+    "license": "Paperlogy-OFL.txt",
+    "family": "Paperlogy 1 Thin",
+    "full_name": "Paperlogy 1 Thin",
+    "sha256": "9d8f4627b1a299dfedc7382c14f56521913ba6fa667753ccd6fbcc4e38824a8a",
+    "hangul_syllables": 11172
+  },
+  {
+    "file": "Paperlogy-2ExtraLight.ttf",
+    "source": "existing installed unmodified font; author: https://github.com/Freesentation/paperlogy",
+    "license": "Paperlogy-OFL.txt",
+    "family": "Paperlogy 2 ExtraLight",
+    "full_name": "Paperlogy 2 ExtraLight",
+    "sha256": "e7ee3fde6d3ac91cca98f2eeb3d39ee87984aa06a0c442c6b2f900255c453593",
+    "hangul_syllables": 11172
+  },
+  {
+    "file": "Paperlogy-3Light.ttf",
+    "source": "existing installed unmodified font; author: https://github.com/Freesentation/paperlogy",
+    "license": "Paperlogy-OFL.txt",
+    "family": "Paperlogy 3 Light",
+    "full_name": "Paperlogy 3 Light",
+    "sha256": "7e92cd3075e088e4fd139da64e7a46f3102b8b8797eee5c1ccfc37b13a5a7794",
+    "hangul_syllables": 11172
+  },
+  {
+    "file": "Paperlogy-4Regular.ttf",
+    "source": "existing installed unmodified font; author: https://github.com/Freesentation/paperlogy",
+    "license": "Paperlogy-OFL.txt",
+    "family": "Paperlogy 4 Regular",
+    "full_name": "Paperlogy 4 Regular",
+    "sha256": "05e1021e3de620dddc97875342e2be1a94c5f8e9b9f792bd16c4c1d0085343b3",
+    "hangul_syllables": 11172
+  },
+  {
+    "file": "Paperlogy-5Medium.ttf",
+    "source": "existing installed unmodified font; author: https://github.com/Freesentation/paperlogy",
+    "license": "Paperlogy-OFL.txt",
+    "family": "Paperlogy 5 Medium",
+    "full_name": "Paperlogy 5 Medium",
+    "sha256": "f3c97ace885bb7d2a53a73dc71d832fa79988d5f546c2562abbb87aa07492f4b",
+    "hangul_syllables": 11172
+  },
+  {
+    "file": "Paperlogy-6SemiBold.ttf",
+    "source": "existing installed unmodified font; author: https://github.com/Freesentation/paperlogy",
+    "license": "Paperlogy-OFL.txt",
+    "family": "Paperlogy 6 SemiBold",
+    "full_name": "Paperlogy 6 SemiBold",
+    "sha256": "ca92034a1c4602a57c55434dfdbf8428a0bb88ac84a99a5effec1a41f0118127",
+    "hangul_syllables": 11172
+  },
+  {
+    "file": "Paperlogy-7Bold.ttf",
+    "source": "existing installed unmodified font; author: https://github.com/Freesentation/paperlogy",
+    "license": "Paperlogy-OFL.txt",
+    "family": "Paperlogy 7 Bold",
+    "full_name": "Paperlogy 7 Bold",
+    "sha256": "7effb892621474e9c2a9112f482eb87dd25b65a470e5ae5971be5a68d89ad89b",
+    "hangul_syllables": 11172
+  },
+  {
+    "file": "Paperlogy-8ExtraBold.ttf",
+    "source": "existing installed unmodified font; author: https://github.com/Freesentation/paperlogy",
+    "license": "Paperlogy-OFL.txt",
+    "family": "Paperlogy 8 ExtraBold",
+    "full_name": "Paperlogy 8 ExtraBold",
+    "sha256": "fb0324f8ac057e50f4f4632331617e347bfe5a04184f7b0db514be682fb6b25c",
+    "hangul_syllables": 11172
+  },
+  {
+    "file": "Paperlogy-9Black.ttf",
+    "source": "existing installed unmodified font; author: https://github.com/Freesentation/paperlogy",
+    "license": "Paperlogy-OFL.txt",
+    "family": "Paperlogy 9 Black",
+    "full_name": "Paperlogy 9 Black",
+    "sha256": "9a2149095d72ae268abb3acf6a3a6ab4adcae8c0ebb98999bd2d607f22149bc0",
+    "hangul_syllables": 11172
+  },
+  {
+    "file": "DoHyeon-Regular.ttf",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/dohyeon/DoHyeon-Regular.ttf",
+    "license": "DoHyeon-OFL.txt",
+    "family": "Do Hyeon",
+    "full_name": "Do Hyeon Regular",
+    "sha256": "35644be7f28e0a68a447b1f7af351dcde5674b870f24f7b5f43e26d00b4ab653",
+    "hangul_syllables": 2437
+  },
+  {
+    "file": "Pretendard-Regular.otf",
+    "source": "https://raw.githubusercontent.com/orioncactus/pretendard/7aeb0698819be2b4097dae8ec8fe6a795e5cf3ae/packages/pretendard/dist/public/static/Pretendard-Regular.otf",
+    "license": "Pretendard-OFL.txt",
+    "family": "Pretendard",
+    "full_name": "Pretendard Regular",
+    "sha256": "3ffbacde6ab8411f1d2db54bb9b1f0b3ee2a738932033722cf0388c06aed1c93",
+    "hangul_syllables": 11172
+  },
+  {
+    "file": "Pretendard-Bold.otf",
+    "source": "https://raw.githubusercontent.com/orioncactus/pretendard/7aeb0698819be2b4097dae8ec8fe6a795e5cf3ae/packages/pretendard/dist/public/static/Pretendard-Bold.otf",
+    "license": "Pretendard-OFL.txt",
+    "family": "Pretendard",
+    "full_name": "Pretendard Bold",
+    "sha256": "2e91915fab54df71cc9598ebf608b2bdb54c6fe3c066ac61dff0bc44fca71cc7",
+    "hangul_syllables": 11172
+  },
+  {
+    "file": "Pretendard-Black.otf",
+    "source": "https://raw.githubusercontent.com/orioncactus/pretendard/7aeb0698819be2b4097dae8ec8fe6a795e5cf3ae/packages/pretendard/dist/public/static/Pretendard-Black.otf",
+    "license": "Pretendard-OFL.txt",
+    "family": "Pretendard Black",
+    "full_name": "Pretendard Black",
+    "sha256": "94628b0bcea8936b6e5c30d98d685eb9bbaffb0fe2ed255542ecc656c248e021",
+    "hangul_syllables": 11172
+  }
+]

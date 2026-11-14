@@ -1,0 +1,20 @@
+{
+  "source_video": "https://www.youtube.com/shorts/FNPMz_AV6eY",
+  "evidence": "owner-provided local edit_plan.json, finish_v18.py and captions.ass, inspected 2026-11-14",
+  "width": 1080,
+  "height": 1920,
+  "font": "Paperlogy 7 Bold",
+  "font_size": 80,
+  "primary_ass": "&H00FFFFFF",
+  "highlight_ass": "&H009AF5FF",
+  "outline_ass": "&H00202020",
+  "outline": 3,
+  "shadow": 1.5,
+  "x": 500,
+  "default_y": 1450,
+  "observed_y": [1100,1600,210,870],
+  "fade_ms": 100,
+  "pop_percent": [94,103,100],
+  "pop_ms": [0,120,200],
+  "note": "Y is scene-specific to avoid faces, hands, and the product. Paperlogy 9 Black was copied in the original project but the actual ASS Caption style used 7 Bold."
+}
